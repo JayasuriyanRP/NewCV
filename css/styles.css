@@ -1,0 +1,33 @@
+.defaultOverride{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.profileCore{
+    background: #E4F9F5;
+}
+
+.top-container{
+    height: 200px;
+    width: 200px;
+    border: solid black;
+    padding: 20px;
+    border-width: 10px;
+}
+
+.middle-container{
+    height: 200px;
+    width: 200px;
+    background: red;
+    border: solid black;
+    border-width: 20px;
+}
+
+.bottom-container{
+    height: 200px;
+    width: 200px;
+    background: blue;
+    border: solid black;
+    border-width: 10px;
+}
