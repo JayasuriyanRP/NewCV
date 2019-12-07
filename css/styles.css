@@ -29,6 +29,10 @@ body{
     bottom:300px;
     left: 300px;
 }
+.mountain{
+    height: 50%;
+    width: 50%;
+}
 
 .top-cloud{
     position: absolute;
