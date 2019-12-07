@@ -7,27 +7,22 @@
 .profileCore{
     background: #E4F9F5;
 }
-
+body{
+    text-align: center;
+}
 .top-container{
-    height: 200px;
-    width: 200px;
-    border: solid black;
-    padding: 20px;
-    border-width: 10px;
+    padding-top: 100px;
+    position: relative;
 }
 
-.middle-container{
-    height: 200px;
-    width: 200px;
-    background: red;
-    border: solid black;
-    border-width: 20px;
+.bottom-cloud{
+    position: absolute;
+    bottom:300px;
+    left: 50px;
 }
 
-.bottom-container{
-    height: 200px;
-    width: 200px;
-    background: blue;
-    border: solid black;
-    border-width: 10px;
+.top-cloud{
+    position: absolute;
+    right: 50px;
+    top: 50px;
 }
