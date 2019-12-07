@@ -4,6 +4,15 @@
     margin-right: 0px;
     margin-bottom: 0px;
 }
+h1{
+    font-family: 'Sacramento', cursive;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+}
+p{
+    font-family: 'Josefin Sans', sans-serif;
+}
 .profileCore{
     background: #E4F9F5;
 }
@@ -18,11 +27,31 @@ body{
 .bottom-cloud{
     position: absolute;
     bottom:300px;
-    left: 50px;
+    left: 300px;
 }
 
 .top-cloud{
     position: absolute;
-    right: 50px;
+    right: 300px;
     top: 50px;
 }
+
+/* 
+
+    font-family: 'Sacramento', cursive;
+
+    font-family: 'Merriweather', serif;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Montez', cursive;
+
+    font-family: 'Shadows Into Light', cursive;
+
+    font-family: 'Pacifico', cursive;
+
+    font-family: 'Pacifico', cursive;
+
+    
+
+ */
