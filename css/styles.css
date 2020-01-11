@@ -41,6 +41,10 @@ a{
 a:hover{
     color: #E4F9F5;
 }
+.copyrightText{
+    color: #E4F9F5;
+    font-size: 1rem;
+}
 .defaultOverride{
     margin: 0px;
     /* margin: 0 */
@@ -101,10 +105,11 @@ a:hover{
     height: 300px;
     width: 300px;
 }
-.mountain_div
+.mountain
 {
-    position: relative;
-    margin: auto;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 0 auto;
 }
 .btn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
