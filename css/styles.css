@@ -1,26 +1,75 @@
-.defaultOverride{
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+body{
+    margin: 0px;
+    text-align: center;
+    font-size: 1.6em;
+    color: #40514E;
 }
 h1{
+    color: #66BFBF;
     font-family: 'Sacramento', cursive;
-    font-size: xx-large;
+    margin: 50px 50px 0 50px;
+    /* font-size: 90px; using pixel will not be a good practise as when zooming the page the content remains in same size*/ 
+    font-size: 5.6rem; /*100% = 16px so 90px = 16x(90/16) = 500%*/
 }
 h2{
+    color: #66BFBF;
     font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
 }
 h3{
+    color: #11999E;
     font-family: 'Shadows Into Light', cursive;
 }
 p{
     font-family: 'Josefin Sans', sans-serif;
+    line-height: 2;
+}
+hr{
+    border: dotted #EAF6F6 10px;
+    border-bottom: none;
+    width: 10%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+a{
+    color: #11999E;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 20px;
+}
+a:hover{
+    color: #E4F9F5;
+}
+.defaultOverride{
+    margin: 0px;
+    /* margin: 0 */
+}
+.skill-row{
+    /* position: absolute; */
+        width: 50%;
+        margin: 100px auto 100px auto;
+        text-align: left;
+}
+.skill-image-odd{
+    width: 25%;
+    margin-right: 30px;
+    float: left;
+}
+.skill-image-even{
+    width: 25%;
+    margin-left: 30px;
+    float: right;
 }
 .profileCore{
     background: #E4F9F5;
 }
-body{
+.middle-container{
+    margin: 100px auto 100px auto;
+}
+.bottom-container{
+    background-color: #66BFBF;
+    padding: 50px 0 16px;
     text-align: center;
 }
 .top-container{
@@ -28,22 +77,79 @@ body{
     position: relative;
 }
 
+.button-contact{
+    width: 200px;
+    margin: auto auto 10px auto;
+    background-color: #07b717;
+    }
+.intro_profile{
+    width: 50%;
+    margin: 0 auto 0 auto;
+}
 .bottom-cloud{
     position: absolute;
-    bottom:300px;
-    left: 300px;
+    bottom:35%;
+    left: 25%;
 }
 
 .top-cloud{
     position: absolute;
-    right: 300px;
-    top: 50px;
+    right: 20%;
+    top: 30%;
 }
 .profile-image{
     height: 300px;
     width: 300px;
 }
-
+.mountain_div
+{
+    position: relative;
+    margin: auto;
+}
+.btn {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #14dbc0), color-stop(1, #9aeced) );
+	background:-moz-linear-gradient( center top, #14dbc0 5%, #9aeced 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#14dbc0', endColorstr='#9aeced');
+	background-color:#14dbc0;
+	-webkit-border-top-left-radius:24px;
+	-moz-border-radius-topleft:24px;
+	border-top-left-radius:24px;
+	-webkit-border-top-right-radius:24px;
+	-moz-border-radius-topright:24px;
+	border-top-right-radius:24px;
+	-webkit-border-bottom-right-radius:24px;
+	-moz-border-radius-bottomright:24px;
+	border-bottom-right-radius:24px;
+	-webkit-border-bottom-left-radius:24px;
+	-moz-border-radius-bottomleft:24px;
+	border-bottom-left-radius:24px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#fcfcfc;
+	font-family: 'Montserrat', sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:150px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+}
+.btn:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9aeced), color-stop(1, #14dbc0) );
+	background:-moz-linear-gradient( center top, #9aeced 5%, #14dbc0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9aeced', endColorstr='#14dbc0');
+	background-color:#9aeced;
+}.btn:active {
+	position:relative;
+	top:1px;
+}
 /* 
 
     font-family: 'Sacramento', cursive;
