@@ -1,105 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jayasuriyan RP</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link
-        href="https://fonts.googleapis.com/css?family=Josefin+Sans|Merriweather|Montez|Montserrat|Pacifico|Sacramento|Shadows+Into+Light&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Jayasuriyan RP - Resume</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.5;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .header p {
+      margin: 4px 0;
+      font-size: 0.95em;
+      color: #555;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.9em;
+      margin-top: 6px;
+      color: #333;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+    .entry {
+      margin-bottom: 16px;
+    }
+    .subsection-title {
+      font-weight: 600;
+      font-size: 1.05em;
+      margin-bottom: 2px;
+    }
+    .entry p {
+      margin: 2px 0 6px 0;
+      font-style: italic;
+      color: #444;
+    }
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .two-col > div {
+      flex: 1;
+      min-width: 45%;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.9em;
+      color: #444;
+    }
+    .skills-grid div::before {
+      content: "✔️ ";
+      color: #007acc;
+    }
+    .print-friendly {
+      page-break-after: always;
+    }
+  </style>
 </head>
+<body>
 
-<body class="defaultOverride">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark mr-auto">
-            <a class="navbar-brand" href="">Jayasuriyan</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="navbar-item">
-                    <a class="nav-link" href="">Home</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="">My Profile</a>
-                </li> 
-                <li class="navbar-item">
-                    <a class="nav-link" href="">My Expericence</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="">Contact Me</a>
-                </li>
-            </ul>
-            </div>
-        </nav>
-    <div class="profileCore top-container">
+<div class="header">
+  <h1>Jayasuriyan RP</h1>
+  <p>Coimbatore, Tamil Nadu, India</p>
+  <div class="contact-icons">
+    <span>📧 jayasuriyan.rp@outlook.com</span>
+    <span>📞 +91-9524264656</span>
+    <span>💻 github.com/jayasuriyan</span>
+    <span>🔗 linkedin.com/in/jayasuriyan</span>
+  </div>
+</div>
 
-        <img class="top-cloud" src="images/cloud.png" alt="cloud-image">
-        <h1>I'm Jayasuriyan</h1>
-        <h2>I am a full stack developer</h2>
-        <img class="bottom-cloud" src="images/cloud.png" alt="cloud-image">
-        <img class="mountain" src="images/mountain.png" alt="cloud-image">
-    </div>
-    <div class="middle-container">
-        <div class="profile">
-            <img class="profile-image" src="images/me_circle.png" alt="profile image">
-            <h2>Hello.</h2>
-            <p class="intro_profile">I am a Windows Desktop Application and Web Developer. I love programming,
-                photography, cooking and hikking.
-            </p>
-        </div>
-        <hr>
-        <div class="skills">
-            <h2>My Skills.</h2>
-            <div class="skill-row">
-                <img class="skill-image-odd" src="images/microchip.png" alt="">
-                <h3>Electronics</h3>
-                <p>My interest in electronic devices started at my age of 10 when i bought my first remote car. I
-                    started exploring about different electronic devices which helped my solve many issues that i face
-                    day to day.</pclass="skill_description_even">
-            </div>
-            <div class="skill-row">
-                <img class="skill-image-even" src="images/gamepad.png" alt="">
-                <h3>Programming</h3>
-                <p>I started learning to code when I was 12 years old. I wanted to make my own game. I have gained a
-                    wealth of expericence design and developing mobile and web application. </p>
-            </div>
-            <div class="skill-row">
-                <img class="skill-image-odd" src="images/camera.png" alt="">
-                <h3>Photography</h3>
-                <p>I love to let the world know how i see this world. View the world from my eye.</p>
-            </div>
-            <div class="skill-row">
-                <img class="skill-image-even" src="images/trekking.png" alt="">
-                <h3>Trekking</h3>
-                <p>I feel this life is awesome and i enjoying living. The life is once and utilize this wisely. Sky is
-                    the limit and explore the world till your last breath.</p>
-            </div>
-        </div>
-        <hr>
-        <div class="contact-me">
-            <h2>Get In Touch</h2>
-            <h3>If you share similar intrest.</h3>
-            <p>Share the similar intrese? We will discuss more and explore the world.</p>
-            <a class="btn" href="mailto:r.p.jayasuriyanece@outlook.com">CONTACT ME</a>
-        </div>
-    </div>
+<div class="section">
+  <div class="section-title">Education</div>
+  <div class="entry">
+    <div class="subsection-title">Knowledge Institute of Technology</div>
+    <p>Bachelor of Engineering in Electronics and Communication (2011 – 2015), Tamil Nadu</p>
+  </div>
+</div>
 
-    <div class="bottom-container">
-        <a class="footer-link" href="https://www.linkedin.com/in/jayasuriyan/">LinkedIn</a>
-        <a class="footer-link" href="https://twitter.com/jayasuriyanJai">Twitter</a>
-        <a class="footer-link" href="https://www.facebook.com/jayasuriyan007">Facebook</a>
-        <a class="footer-link" href="https://www.instagram.com/_jayasuriyan/">Instagram</a>
-        <p class="copyrightText">© 2019 Jayasuiryan RP</p>
+<div class="section">
+  <div class="section-title">Certifications</div>
+  <div class="skills-grid">
+    <div>Data Structures</div>
+    <div>Cyber Security</div>
+    <div>Digital Marketing</div>
+    <div>Database Management</div>
+    <div>Java Programming</div>
+    <div>Internet Technology</div>
+    <div>Data Science</div>
+    <div>Computer Architecture</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Experience</div>
+  <div class="entry">
+    <div class="subsection-title">Technical Specialist – Bosch Global Software Technologies</div>
+    <p>Mar 2022 – Present | Coimbatore</p>
+    <ul>
+      <li>Designed and deployed microservices for industrial automation systems.</li>
+      <li>Streamlined CI/CD pipelines in Azure DevOps, enhancing deployment speed by 30%.</li>
+      <li>Mentored junior developers, conducted code reviews, and ensured code quality.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="subsection-title">Senior Software Engineer – ABB</div>
+    <p>Apr 2018 – Mar 2022 | Bangalore</p>
+    <ul>
+      <li>Developed and maintained scalable REST APIs using .NET Core.</li>
+      <li>Built automated Azure CI/CD pipelines, reducing deployment cycles by 40%.</li>
+      <li>Participated in technical discussions and peer code reviews.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="subsection-title">Software Engineer – Quest Global</div>
+    <p>Aug 2015 – Mar 2018 | Bangalore</p>
+    <ul>
+      <li>Created desktop applications to improve operational efficiency.</li>
+      <li>Reduced software defects by 25% through automated unit testing frameworks.</li>
+      <li>Prepared detailed design documents and collaborated on Agile teams.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Projects</div>
+  <div class="entry">
+    <div class="subsection-title">ctrlX Device Portal</div>
+    <ul>
+      <li>Built microservices for device/app/license management on Bosch ctrlX.</li>
+      <li><strong>Tech:</strong> Golang, Azure DevOps, Angular</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="subsection-title">ctrlX OS Apps</div>
+    <ul>
+      <li>Developed apps for motion, PLC, and CAM on embedded Linux.</li>
+      <li><strong>Tech:</strong> C++, Go, Linux</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Technical Skills</div>
+  <div class="two-col">
+    <div>
+      <p><strong>Languages:</strong> C#, Golang, TypeScript, PowerShell</p>
+      <p><strong>Frontend:</strong> React, Angular, Stencil.js, HTML/CSS</p>
+      <p><strong>Cloud & DevOps:</strong> Azure, Docker, Pulumi</p>
     </div>
+    <div>
+      <p><strong>Databases:</strong> Azure Cosmos DB, SQLite</p>
+      <p><strong>Tools:</strong> Git, Jenkins, Visual Studio, VS Code</p>
+      <p><strong>Testing:</strong> JUnit, NUnit, xUnit</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Leadership / Extracurricular</div>
+  <ul>
+    <li>Built developer automation toolchains for internal teams.</li>
+    <li>Delivered tech talks on microservice deployment strategies.</li>
+    <li>Led weekly code reviews and retrospectives.</li>
+  </ul>
+</div>
+
 </body>
-
 </html>
