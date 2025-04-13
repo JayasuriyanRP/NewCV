@@ -183,7 +183,7 @@
             border-left: 5px solid #78ba15;
             padding: 16px;
             border-radius: 8px;
-            margin-top: 20px;
+            margin-top: 10px;
             font-size: 0.95em;
         }
 
@@ -247,12 +247,12 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
+            gap: 4px;
         }
 
         .skill-category {
             font-weight: bold;
-            margin-bottom: 8px;
+            margin: 4px;
             color: #007acc;
         }
 
@@ -454,7 +454,7 @@
                     </ul>
                 </div>
                 <div class="recognition-card">
-                    <h4>Recognitions & Achievements</h4>
+                    <div class="project-title">Recognitions & Achievements:</div>
                     <ul class="achievement-list">
                         <li><strong>Bravo Award</strong> - Recognized for valuable contributions and extended support
                             across teams during key deliverables.</li>
@@ -563,7 +563,7 @@
                 </div>
 
                 <div class="recognition-card">
-                    <h4>Recognitions & Achievements</h4>
+                    <div class="project-title">Recognitions & Achievements:</div>
                     <ul class="achievement-list">
                         <li><strong>Spot Award</strong> - Honored at ABB for outstanding delivery and exceeding
                             performance expectations during critical project milestones.</li>
@@ -618,7 +618,7 @@
                 </div>
 
                 <div class="recognition-card">
-                    <h4>Recognitions & Achievements</h4>
+                    <div class="project-title">Recognitions & Achievements:</div>
                     <ul class="achievement-list">
                         <li><strong>Team of the Year - 2016</strong> - Celebrated for exemplifying the core value of
                             teamwork
@@ -636,58 +636,73 @@
         <div class="entry">
             <div class="skills-grid">
                 <div>
-                    <div class="skill-category">Backend</div>
-                    <div class="skill-item">C# <span class="exp-tag">9 years</span></div>
-                    <div class="skill-item">Golang <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">Typescript <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">.NET Core <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">.NET Framework <span class="exp-tag">5 years</span></div>
+                    <h4 class="skill-category">Backend</h4>
+                    <ul>
+                        <li><strong>C#</strong> — 9 years</li>
+                        <li><strong>Golang</strong> — 3 years</li>
+                        <li><strong>TypeScript</strong> — 6 years</li>
+                        <li><strong>.NET Core</strong> — 6 years</li>
+                        <li><strong>.NET Framework</strong> — 5 years</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="skill-category">Frontend</div>
-                    <div class="skill-item">React <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">Angular <span class="exp-tag">1 years</span></div>
-                    <div class="skill-item">Stencil Js <span class="exp-tag">1 years</span></div>
-                    <div class="skill-item">SaSS <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">HTML/CSS <span class="exp-tag">8 years</span></div>
+                    <h4 class="skill-category">Frontend</h4>
+                    <ul>
+                        <li><strong>React</strong> — 6 years</li>
+                        <li><strong>Angular</strong> — 1 year</li>
+                        <li><strong>Stencil JS</strong> — 1 year</li>
+                        <li><strong>SASS</strong> — 3 years</li>
+                        <li><strong>HTML/CSS</strong> — 8 years</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="skill-category">Database</div>
-                    <div class="skill-item">Azure Cosmos DB <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">SQLite <span class="exp-tag">2 years</span></div>
-                    <div class="skill-item">Entity Framework <span class="exp-tag">6 years</span></div>
+                    <h4 class="skill-category">Database</h4>
+                    <ul>
+                        <li><strong>Azure Cosmos DB</strong> — 3 years</li>
+                        <li><strong>SQLite</strong> — 2 years</li>
+                        <li><strong>Entity Framework</strong> — 6 years</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="skill-category">Cloud</div>
-                    <div class="skill-item">Azure<span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">IaC Pulumi<span class="exp-tag">3 years</span></div>
+                    <h4 class="skill-category">Cloud & Infrastructure</h4>
+                    <ul>
+                        <li><strong>Azure</strong> — 6 years</li>
+                        <li><strong>IaC with Pulumi</strong> — 3 years</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="skill-category">CI/CD & DevOps</div>
-                    <div class="skill-item">Azure DevOps <span class="exp-tag">8 years</span></div>
-                    <div class="skill-item">Jenkins <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">PowerShell <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">Docker <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">Git <span class="exp-tag">9 years</span></div>
-                    <div class="skill-item">WSL <span class="exp-tag">3 years</span></div>
+                    <h4 class="skill-category">CI/CD & DevOps</h4>
+                    <ul>
+                        <li><strong>Azure DevOps</strong> — 8 years</li>
+                        <li><strong>Jenkins</strong> — 3 years</li>
+                        <li><strong>PowerShell</strong> — 6 years</li>
+                        <li><strong>Docker</strong> — 6 years</li>
+                        <li><strong>Git</strong> — 9 years</li>
+                        <li><strong>WSL</strong> — 3 years</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="skill-category">Architecture & Testing</div>
-                    <div class="skill-item">Microservices <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">API Versioning <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">TDD <span class="exp-tag">6 years</span></div>
+                    <h4 class="skill-category">Architecture & Testing</h4>
+                    <ul>
+                        <li><strong>Microservices</strong> — 6 years</li>
+                        <li><strong>API Versioning</strong> — 3 years</li>
+                        <li><strong>TDD</strong> — 6 years</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="skill-category">Tools</div>
-                    <div class="skill-item">VS Code <span class="exp-tag">9 years</span></div>
-                    <div class="skill-item">Visual Studio <span class="exp-tag">9 years</span></div>
-                    <div class="skill-item">Postman <span class="exp-tag">7 years</span></div>
-                    <div class="skill-item">JMeter <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">Draw.io <span class="exp-tag">6 years</span></div>
+                    <h4 class="skill-category">Tools</h4>
+                    <ul>
+                        <li><strong>VS Code</strong> — 9 years</li>
+                        <li><strong>Visual Studio</strong> — 9 years</li>
+                        <li><strong>Postman</strong> — 7 years</li>
+                        <li><strong>JMeter</strong> — 3 years</li>
+                        <li><strong>Draw.io</strong> — 6 years</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="section">
         <div class="section-title">Certifications</div>
