@@ -1,207 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Jayasuriyan RP - Resume</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #1a1a1a;
-      margin: 0;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.5;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    .header p {
-      margin: 4px 0;
-      font-size: 0.95em;
-      color: #555;
-    }
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      font-size: 0.9em;
-      margin-top: 6px;
-      color: #333;
-    }
-    .section {
-      margin-top: 24px;
-    }
-    .section-title {
-      font-size: 1.2em;
-      font-weight: 600;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 4px;
-      margin-bottom: 12px;
-    }
-    .entry {
-      margin-bottom: 16px;
-    }
-    .subsection-title {
-      font-weight: 600;
-      font-size: 1.05em;
-      margin-bottom: 2px;
-    }
-    .entry p {
-      margin: 2px 0 6px 0;
-      font-style: italic;
-      color: #444;
-    }
-    ul {
-      padding-left: 18px;
-      margin-top: 4px;
-      margin-bottom: 6px;
-    }
-    .two-col {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .two-col > div {
-      flex: 1;
-      min-width: 45%;
-    }
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 20px;
-      font-size: 0.9em;
-      color: #444;
-    }
-    .skills-grid div::before {
-      content: "✔️ ";
-      color: #007acc;
-    }
-    .print-friendly {
-      page-break-after: always;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayasuriyan RP - Resume</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #fff;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.5;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .header p {
+            margin: 4px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9em;
+            margin-top: 6px;
+            color: #333;
+        }
+
+        .section {
+            margin-top: 24px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+        }
+
+        .entry {
+            margin-bottom: 16px;
+        }
+
+        .subsection-title {
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: 1em;
+            margin: 0px;
+        }
+
+        .subsection {
+            margin-bottom: 4px;
+        }
+
+        .subsection p {
+            margin: 0 0 6px 0;
+        }
+
+        .subsection-details {
+            font-weight: 400;
+            margin: 1px 0 0 0;
+            font-style: italic;
+            color: #444;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .entry p {
+            margin: 2px 0 6px 0;
+            font-style: italic;
+            color: #444;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .two-col>div {
+            flex: 1;
+            min-width: 45%;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+        .print-friendly {
+            page-break-after: always;
+        }
+
+        .project-section {
+            background-color: #eef6fc;
+            border-left: 4px solid #007acc;
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .project-section li {
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px 16px;
+            font-size: 0.85em;
+        }
+
+        .project-skills {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .project-skills span {
+            background-color: #007acc;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.80rem;
+            border-radius: 12px;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            color: #007acc;
+            margin-bottom: 4px;
+        }
+
+        .skill-item {
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        .recognition-card {
+            background-color: #f2f8e9;
+            border-left: 5px solid #78ba15;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .achievement-card {
+            background: #f3f9ff;
+            border: 1px solid #cce4f7;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-top: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .achievement-card h4 {
+            margin: 0 0 8px;
+            color: #007acc;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .achievement-list {
+            font-size: 0.95em;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+        }
+
+        .cert-card {
+            background: #f4faff;
+            border: 1px solid #cce6ff;
+            border-radius: 6px;
+            padding: 10px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.9em;
+        }
+
+        .cert-card a {
+            font-size: 0.85em;
+            color: #007acc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cert-card a:hover {
+            text-decoration: underline;
+        }
+
+        .cert-icon {
+            margin-right: 6px;
+        }
+    </style>
 </head>
+
 <body>
-
-<div class="header">
-  <h1>Jayasuriyan RP</h1>
-  <p>Coimbatore, Tamil Nadu, India</p>
-  <div class="contact-icons">
-    <span>📧 jayasuriyan.rp@outlook.com</span>
-    <span>📞 +91-9524264656</span>
-    <span>💻 github.com/jayasuriyan</span>
-    <span>🔗 linkedin.com/in/jayasuriyan</span>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">Education</div>
-  <div class="entry">
-    <div class="subsection-title">Knowledge Institute of Technology</div>
-    <p>Bachelor of Engineering in Electronics and Communication (2011 – 2015), Tamil Nadu</p>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">Certifications</div>
-  <div class="skills-grid">
-    <div>Data Structures</div>
-    <div>Cyber Security</div>
-    <div>Digital Marketing</div>
-    <div>Database Management</div>
-    <div>Java Programming</div>
-    <div>Internet Technology</div>
-    <div>Data Science</div>
-    <div>Computer Architecture</div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">Experience</div>
-  <div class="entry">
-    <div class="subsection-title">Technical Specialist – Bosch Global Software Technologies</div>
-    <p>Mar 2022 – Present | Coimbatore</p>
-    <ul>
-      <li>Designed and deployed microservices for industrial automation systems.</li>
-      <li>Streamlined CI/CD pipelines in Azure DevOps, enhancing deployment speed by 30%.</li>
-      <li>Mentored junior developers, conducted code reviews, and ensured code quality.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="subsection-title">Senior Software Engineer – ABB</div>
-    <p>Apr 2018 – Mar 2022 | Bangalore</p>
-    <ul>
-      <li>Developed and maintained scalable REST APIs using .NET Core.</li>
-      <li>Built automated Azure CI/CD pipelines, reducing deployment cycles by 40%.</li>
-      <li>Participated in technical discussions and peer code reviews.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="subsection-title">Software Engineer – Quest Global</div>
-    <p>Aug 2015 – Mar 2018 | Bangalore</p>
-    <ul>
-      <li>Created desktop applications to improve operational efficiency.</li>
-      <li>Reduced software defects by 25% through automated unit testing frameworks.</li>
-      <li>Prepared detailed design documents and collaborated on Agile teams.</li>
-    </ul>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">Projects</div>
-  <div class="entry">
-    <div class="subsection-title">ctrlX Device Portal</div>
-    <ul>
-      <li>Built microservices for device/app/license management on Bosch ctrlX.</li>
-      <li><strong>Tech:</strong> Golang, Azure DevOps, Angular</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="subsection-title">ctrlX OS Apps</div>
-    <ul>
-      <li>Developed apps for motion, PLC, and CAM on embedded Linux.</li>
-      <li><strong>Tech:</strong> C++, Go, Linux</li>
-    </ul>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">Technical Skills</div>
-  <div class="two-col">
-    <div>
-      <p><strong>Languages:</strong> C#, Golang, TypeScript, PowerShell</p>
-      <p><strong>Frontend:</strong> React, Angular, Stencil.js, HTML/CSS</p>
-      <p><strong>Cloud & DevOps:</strong> Azure, Docker, Pulumi</p>
+    <div class="header">
+        <h1>Jayasuriyan RP</h1>
+        <p>Coimbatore, Tamil Nadu</p>
+        <div class="contact-icons">
+            <span>📧 jayasuriyan.rp@outlook.com</span>
+            <span>📞 +91-9524264656</span>
+            <span>💻 github.com/jayasuriyan</span>
+            <span>🔗 linkedin.com/in/jayasuriyan</span>
+        </div>
     </div>
-    <div>
-      <p><strong>Databases:</strong> Azure Cosmos DB, SQLite</p>
-      <p><strong>Tools:</strong> Git, Jenkins, Visual Studio, VS Code</p>
-      <p><strong>Testing:</strong> JUnit, NUnit, xUnit</p>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p>
+            Accomplished Technical Specialist with over 10 years of experience in full-stack software development,
+            delivering high-performance solutions using Golang, .NET Core, C#, React, and Angular. Adept at building
+            scalable microservices and cloud-native applications leveraging Azure services and CI/CD pipelines. Known
+            for driving engineering excellence through automation, PowerShell scripting, and a passion for industrial
+            automation. Proven track record of leading cross-functional teams, architecting resilient systems, and
+            consistently delivering quality software that aligns with business goals.
+        </p>
     </div>
-  </div>
-</div>
 
-<div class="section">
-  <div class="section-title">Leadership / Extracurricular</div>
-  <ul>
-    <li>Built developer automation toolchains for internal teams.</li>
-    <li>Delivered tech talks on microservice deployment strategies.</li>
-    <li>Led weekly code reviews and retrospectives.</li>
-  </ul>
-</div>
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+            <div class="subsection-title">
+                <h3 class="title">Knowledge Institute of Technology</h3>
+                <h3 class="title">June 2011 - March 2015</h3>
+            </div>
+            <div class="subsection-details">
+                <p>Bachelor of Engineering in Electronics and Communication - <strong>8.1 CGPA</strong></p>
+                <p>Tamil Nadu</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="subsection-title">
+                <h3 class="title">Senthil Matric. Hr. Sec. School</h3>
+                <h3 class="title">June 2010 - March 2011</h3>
+            </div>
+            <div class="subsection-details">
+                <p>12<sup>th</sup> Computer Science - <strong>78%</strong></p>
+                <p>Tamil Nadu</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="section">
+        <div class="section-title">Experience</div>
+        <div class="subsection">
+            <div class="subsection-title">
+                <h3 class="title">Bosch Global Software Technologies (BGSW)</h3>
+                <h3 class="title">March 2022 - June 2025</h3>
+            </div>
+            <div class="subsection-details">
+                <p>Technical Specialist</p>
+                <p>Coimbatore, TamilNadu</p>
+            </div>
+            <div class="entry">
+                <ul>
+                    <li>Managed cross-functional development teams and delivered over 6 successful releases,
+                        consistently meeting project timelines and stakeholder expectations.</li>
+                    <li>Oversaw the full software development lifecycle (SDLC), from architectural design to
+                        deployment and ongoing support.</li>
+                    <li>Designed and implemented scalable software solutions aligned with partners requirements and
+                        modern engineering standards.</li>
+                    <li>Collaborated closely with product managers, designers, and QA engineers to ensure alignment
+                        and high-quality outcomes.</li>
+                    <li>Mentored junior developers, fostering technical growth and promoting best practices across
+                        the team.</li>
+                    <li>Led peer code reviews to ensure the delivery of clean, maintainable, and production-ready
+                        code.</li>
+                    <li>Stayed current with emerging technologies and industry trends to enhance development
+                        strategies and propose innovation-driven improvements.</li>
+                    <li>Contributed to agile project planning by estimating efforts, scoping requirements, and
+                        managing deliverables.</li>
+                    <li>Diagnosed and resolved complex software issues, while providing post-deployment technical
+                        support.</li>
+                    <li>Continuously analyzed and improved development workflows for better team efficiency and
+                        project throughput.</li>
+                    <li>Actively engaged stakeholders to clarify expectations and provided expert guidance to align
+                        technical efforts with business objectives.</li>
+                </ul>
+                <div class="project-section">
+                    <div class="project-title">Projects:</div>
+                    <ul>
+                        <li>
+                            <strong>ctrlX Device Portal</strong> - Developed microservices
+                            for device/license/app management.
+                            <div class="project-skills">
+                                <span>Golang</span>
+                                <span>C#</span>
+                                <span>.NET 6</span>
+                                <span>.NET 8</span>
+                                <span>React</span>
+                                <span>Azure Infrastructure</span>
+                                <span>Azure DevOps</span>
+                                <span>Powershell</span>
+                                <span>Docker</span>
+                                <span>BDD</span>
+                                <span>TDD</span>
+                                <span>Mailjet</span>
+                                <span>Microservices</span>
+                                <span>FossID - OSS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ctrlX Licensing Service Tools</strong> - Developed an Internal tool for Admin user
+                            functionalities, Sending Welcomeemail, Expiry Email, Collecting data about license sales and
+                            etc.
+                            <div class="project-skills">
+                                <span>Golang</span>
+                                <span>C#</span>
+                                <span>Windows Services</span>
+                                <span>React</span>
+                                <span>Azure DevOps</span>
+                                <span>Powershell</span>
+                                <span>Mailjet</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Drive Sizing</strong> - Resuable component for enabling customers to choose the
+                            correct Drive, Motor, IO's, Controllers, PLC's, Servos, etc.
+                            <div class="project-skills">
+                                <span>Stencil JS</span>
+                                <span>C#</span>
+                                <span>.NET Core 3.1</span>
+                                <span>TDD</span>
+                                <span>Azure DevOps</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ctrlX OS Apps</strong> - Motion, PLC, and CAM apps on Linux-based Operating system
+                            (ctrlX OS).
+                            <div class="project-skills">
+                                <span>Angular 17</span>
+                                <span>C#</span>
+                                <span>Jenkins</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="recognition-card">
+                    <h4>Recognitions & Achievements</h4>
+                    <ul class="achievement-list">
+                        <li><strong>Bravo Award</strong> - Recognized for valuable contributions and extended support
+                            across teams during key deliverables.</li>
+                        <li><strong>Champ Skill Award</strong> - Acknowledged for technical leadership and transparent
+                            communication during the Trusted Account project, including leading architectural
+                            discussions and fostering a collaborative team culture.</li>
+                        <li><strong>Bravo Award</strong> - Commended for outstanding ownership in the Indrasize project,
+                            driving task prioritization, team onboarding, and proactive participation in key meetings.
+                        </li>
+                        <li><strong>WOW Award</strong> - Applauded for topic ownership, technical guidance, and
+                            impactful results through dedicated team mentorship and collaboration.</li>
+                        <li><strong>Stand-Out Performer</strong> - Celebrated for quick learning, efficient delivery,
+                            and proactive contributions in CAM and Motion topics.</li>
+                        <li><strong>You Are My Mentor</strong> - Honored for consistent guidance and delivering results
+                            through mentorship and leadership.</li>
+                        <li><strong>#Fit.AncHER</strong> - Recognized for collaborative work on MVPs and quick
+                            on-the-job learning of Golang and its implementation.</li>
+                        <li><strong>The Expert</strong> - Acknowledged for technical expertise and contributions in the
+                            App Launcher task (UMST project).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">
+                <h3 class="title">ASEA Brown Boveri (ABB)</h3>
+                <h3 class="title">April 2018 - March 2022</h3>
+            </div>
+            <div class="subsection-details">
+                <p>Senior Software Engineer</p>
+                <p>Bangalore, Karnataka</p>
+            </div>
+            <div class="entry">
+                <ul>
+                    <li>Led cross-functional collaboration with stakeholders, product owners, architects, and developers
+                        to drive seamless, high-quality application delivery.</li>
+                    <li>Contributed to several major product deliveries, ensuring alignment with business goals, on-time
+                        execution, and post-release stability.</li>
+                    <li>Worked closely with new team members during onboarding, providing detailed technical guidance
+                        and knowledge sharing to ensure their full and timely contribution.</li>
+                    <li>Collaborated with the architect to design scalable, modular system architecture that met
+                        performance, maintainability, and business requirements.</li>
+                    <li>Developed responsive and dynamic web applications using React and TypeScript, ensuring optimal
+                        performance across devices.</li>
+                    <li>Designed and implemented key features from the ground up, adhering to SOLID and DRY principles
+                        for maintainability and scalability.</li>
+                    <li>Built and maintained robust RESTful APIs using .NET Core, enabling seamless integration with
+                        frontend and external services.</li>
+                    <li>Automated CI/CD pipelines in Azure DevOps, accelerating deployment cycles by 40% and improving
+                        release reliability.</li>
+                    <li>Actively participated in technical design sessions, code reviews, and team discussions to ensure
+                        high-quality, peer-reviewed code.</li>
+                </ul>
+
+                <div class="project-section">
+                    <div class="project-title">Projects:</div>
+                    <ul>
+                        <li>
+                            <strong>ABB Access</strong> - Mobile platform for After Sales support, product data and
+                            drive registration.
+                            <div class="project-skills">
+                                <span>.NET Core 3.1</span>
+                                <span>C#</span>
+                                <span>React 17 - Functional Components</span>
+                                <span>HTML</span>
+                                <span>SaSS</span>
+                                <span>TypeScript</span>
+                                <span>Powershell</span>
+                                <span>Docker</span>
+                                <span>Azure DevOps</span>
+                                <span>Azure App Service</span>
+                                <span>TDD</span>
+                                <span>Powershell</span>
+                                <span>Black Duck - OSS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ABB Drive Composer</strong> - It is a start-up and maintenance tool for
+                            ABB's common architecture drives. The tool is used to view and set drive parameters, and to
+                            monitor and tune process performance.
+                            <div class="project-skills">
+                                <span>Windows Presentation Foundation</span>
+                                <span>C#</span>
+                                <span>Azure DevOps</span>
+                                <span>TDD</span>
+                                <span>Siemens Step 7</span>
+                                <span>Siemens TIA Portal</span>
+                                <span>Wix Installer<span>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ABB Drive Application Builder</strong> - Combine your application knowledge with the
+                            world-class variable speed drives.
+                            <div class="project-skills">
+                                <span>Windows Presentation Foundation</span>
+                                <span>Windows Forms</span>
+                                <span>C#</span>
+                                <span>Azure DevOps</span>
+                                <span>Siemens Step 7</span>
+                                <span>Siemens TIA Portal</span>
+                                <span>Flexera Install Shield<span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="recognition-card">
+                    <h4>Recognitions & Achievements</h4>
+                    <ul class="achievement-list">
+                        <li><strong>Spot Award</strong> - Honored at ABB for outstanding delivery and exceeding
+                            performance expectations during critical project milestones.</li>
+                        <li><strong>On the Fly Award</strong> - Recognized for swift and proactive resolution of
+                            high-impact bugs under tight deadlines.</li>
+                        <li><strong>Team of the Year</strong> - Celebrated for exemplifying the core value of teamwork
+                            and collaborative excellence.</li>
+                        <li><strong>Customer Appreciation</strong> - Received client recognition for delivering a
+                            high-quality, bug-free product within the committed timeline.</li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">
+                <h3 class="title">Quest Global - GE Oil & Gas</h3>
+                <h3 class="title">August 2015 - March 2018</h3>
+            </div>
+            <div class="subsection-details">
+                <p>Software Engineer</p>
+                <p>Bangalore, Karnataka</p>
+            </div>
+            <div class="entry">
+                <ul>
+                    <li>Collaborated with stakeholders to analyze and understand detailed business and technical
+                        requirements.</li>
+                    <li>Decomposed user stories and modules into manageable development tasks aligned with Agile best
+                        practices.</li>
+                    <li>Created comprehensive conceptual and detailed design documents to ensure clarity and alignment
+                        across teams.</li>
+                    <li>Reviewed and clarified acceptance criteria to ensure complete and accurate implementation of
+                        features.</li>
+                    <li>Implemented modules based on defined tasks, following clean code principles and established
+                        design patterns.</li>
+                    <li>Developed and maintained unit tests to validate functionality and ensure long-term code
+                        reliability.</li>
+                </ul>
+
+                <div class="project-section">
+                    <div class="project-title">Projects:</div>
+                    <ul>
+                        <li>
+                            <strong>System 1* Application Development Kit (SDK)</strong> - Windows Application for
+                            creating Digital Twin of Industrial Assets.
+                            <div class="project-skills">
+                                <span>Windows Presentation Foundation</span>
+                                <span>C#</span>
+                                <span>PRISM</span>
+                                <span>Azure DevOps</span>
+                                <span>TDD</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="entry">
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category">Backend</div>
+                    <div class="skill-item">C# (8 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Golang (4 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Typescript (3 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Dotnet Core (7 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Dotnet Framework (6 yrs, ★★★☆☆)</div>
+                </div>
+                <div>
+                    <div class="skill-category">Frontend</div>
+                    <div class="skill-item">React (3 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Angular (4 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Stencil Js (2 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">SASS (2 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">HTML/CSS (8 yrs, ★★★★★)</div>
+                </div>
+                <div>
+                    <div class="skill-category">Database</div>
+                    <div class="skill-item">Azure Cosmos DB (3 yrs, ★★★★☆)</div>
+                    <div class="skill-item">SQLite (2 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">Entity Framework (6 yrs, ★★★★☆)</div>
+                </div>
+                <div>
+                    <div class="skill-category">Cloud</div>
+                    <div class="skill-item">Azure Container Apps (3 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Azure App Insights (2 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">Pulumi (1 yr, ★★★☆☆)</div>
+                </div>
+                <div>
+                    <div class="skill-category">CI/CD & DevOps</div>
+                    <div class="skill-item">Azure DevOps (6 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Jenkins (4 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">PowerShell (5 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Docker (4 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Git (8 yrs, ★★★★★)</div>
+                    <div class="skill-item">WSL (2 yrs, ★★★☆☆)</div>
+                </div>
+                <div>
+                    <div class="skill-category">Architecture & Testing</div>
+                    <div class="skill-item">Microservices (6 yrs, ★★★★☆)</div>
+                    <div class="skill-item">API Versioning (3 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">TDD (5 yrs, ★★★★☆)</div>
+                </div>
+                <div>
+                    <div class="skill-category">Tools</div>
+                    <div class="skill-item">VS Code (6 yrs, ★★★★★)</div>
+                    <div class="skill-item">Visual Studio (8 yrs, ★★★★★)</div>
+                    <div class="skill-item">Postman (6 yrs, ★★★★☆)</div>
+                    <div class="skill-item">JMeter (3 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">Draw.io (4 yrs, ★★★★☆)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div><span class="cert-icon">🏅</span> <strong>React - The Complete Guide</strong><br>
+                    <a href="https://www.udemy.com/certificate/UC-4a750d-0124-4d68-bfb9-d5b6bb310a6a/"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div><span class="cert-icon">🏅</span> <strong>Angular JS</strong><br>
+                    <a href="https://www.udemy.com/certificate/UC-ad2ebedf-76f7-4bd7-974c-f696570f52f3/"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div><span class="cert-icon">🏅</span> <strong>Go: The Complete Developer's Guide</strong><br>
+                    <a href="https://bgsw.udemy.com/certificate/UC-46f98bcc-cd6b-4104-a4bd-e6d70fe62780/"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div><span class="cert-icon">🏅</span> <strong>React Native - The Practical Guide [2023]</strong><br>
+                    <a href="https://bgsw.udemy.com/certificate/UC-aa22344d-473b-4e44-a2e4-78f0ac0fbe87/"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div><span class="cert-icon">🏅</span> <strong>Web Components & Stencil.js</strong><br>
+                    <a href="https://bgsw.udemy.com/certificate/UC-b8ba8f68-79ea-43fe-a61b-8d4607e8bac3/"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Languages</div>
+        <ul>
+            <li>English — Professional Proficiency</li>
+        </ul>
+    </div>
 </body>
+
 </html>
