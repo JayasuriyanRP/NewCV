@@ -23,7 +23,6 @@
 
         .header {
             text-align: center;
-            margin-bottom: 16px;
         }
 
         .header h1 {
@@ -41,7 +40,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 5px 15px;
             font-size: 0.9em;
             margin-top: 6px;
             color: #333;
@@ -56,7 +55,7 @@
             font-weight: 600;
             border-bottom: 2px solid #000000;
             padding-bottom: 4px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .entry {
@@ -78,7 +77,7 @@
         }
 
         .subsection {
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .subsection p {
@@ -279,29 +278,63 @@
             text-align: center;
         }
 
+        .print-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 999;
+        }
+
         @media print {
-            * {
-                color: black;
-                /* Ensure text color is black for printing */
-                /* background-color: white; */
-                /* Set background color to white */
+            .print-btn {
+                visibility: hidden;
             }
 
-            /* Retain the background color for any elements you want to show */
-            .highlight {
-                background-color: yellow;
+            body {
+                background-color: white !important;
+                color: black !important;
+                font-family: Georgia, serif !important;
             }
 
-            /* Make sure links are visible */
+            .section {
+                margin-top: 16px;
+            }
+
+            .project-section,
+            .recognition-card,
+            .achievement-card,
+            .cert-card,
+            .hobby-section,
+            .skill-item {
+                background-color: #f5f5f5 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
             a {
-                color: blue;
-                /* Or any color you prefer */
+                color: black !important;
+                text-decoration: underline;
+            }
+
+            .project-skills span,
+            .exp-tag {
+                background-color: #d3d3d3 !important;
+                color: black !important;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="print-btn">
+        <button onclick="window.print()">🖨️ Print
+            Resume</button>
+        <button>💬 <a href="https://wa.me/919524264656" target="_blank">WhatsApp</a></button>
+    </div>
+
+
     <div class="header">
         <h1>Jayasuriyan RP</h1>
         <p>Coimbatore, Tamil Nadu</p>
@@ -324,30 +357,6 @@
             automation. Proven track record of leading cross-functional teams, architecting resilient systems, and
             consistently delivering quality software that aligns with business goals.
         </p>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Education</div>
-        <div class="entry">
-            <div class="subsection-title">
-                <h3 class="title">Knowledge Institute of Technology</h3>
-                <h3 class="title">June 2011 - March 2015</h3>
-            </div>
-            <div class="subsection-details">
-                <p>Bachelor of Engineering in Electronics and Communication - <strong>8.1 CGPA</strong></p>
-                <p>Tamil Nadu</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="subsection-title">
-                <h3 class="title">Senthil Matric. Hr. Sec. School</h3>
-                <h3 class="title">June 2010 - March 2011</h3>
-            </div>
-            <div class="subsection-details">
-                <p>12<sup>th</sup> Computer Science - <strong>78%</strong></p>
-                <p>Tamil Nadu</p>
-            </div>
-        </div>
     </div>
 
     <div class="section">
@@ -561,11 +570,6 @@
                             performance expectations during critical project milestones.</li>
                         <li><strong>On the Fly Award</strong> - Recognized for swift and proactive resolution of
                             high-impact bugs under tight deadlines.</li>
-                        <li><strong>Team of the Year</strong> - Celebrated for exemplifying the core value of teamwork
-                            and collaborative excellence.</li>
-                        <li><strong>Customer Appreciation</strong> - Received client recognition for delivering a
-                            high-quality, bug-free product within the committed timeline.</li>
-
                     </ul>
                 </div>
 
@@ -613,6 +617,17 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="recognition-card">
+                    <h4>Recognitions & Achievements</h4>
+                    <ul class="achievement-list">
+                        <li><strong>Team of the Year - 2016</strong> - Celebrated for exemplifying the core value of
+                            teamwork
+                            and collaborative excellence.</li>
+                        <li><strong>Team of the Year - 2015</strong> - Received client recognition for delivering a
+                            high-quality, bug-free product within the committed timeline.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -623,18 +638,18 @@
             <div class="skills-grid">
                 <div>
                     <div class="skill-category">Backend</div>
-                    <div class="skill-item">C# <span class="exp-tag">8 years</span></div>
-                    <div class="skill-item">Golang <span class="exp-tag">4 years</span></div>
-                    <div class="skill-item">Typescript <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">Dotnet Core <span class="exp-tag">7 years</span></div>
-                    <div class="skill-item">Dotnet Framework <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">C# <span class="exp-tag">9 years</span></div>
+                    <div class="skill-item">Golang <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">Typescript <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">.NET Core <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">.NET Framework <span class="exp-tag">5 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Frontend</div>
-                    <div class="skill-item">React <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">Angular <span class="exp-tag">4 years</span></div>
-                    <div class="skill-item">Stencil Js <span class="exp-tag">2 years</span></div>
-                    <div class="skill-item">SASS <span class="exp-tag">2 years</span></div>
+                    <div class="skill-item">React <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">Angular <span class="exp-tag">1 years</span></div>
+                    <div class="skill-item">Stencil Js <span class="exp-tag">1 years</span></div>
+                    <div class="skill-item">SaSS <span class="exp-tag">3 years</span></div>
                     <div class="skill-item">HTML/CSS <span class="exp-tag">8 years</span></div>
                 </div>
                 <div>
@@ -645,32 +660,31 @@
                 </div>
                 <div>
                     <div class="skill-category">Cloud</div>
-                    <div class="skill-item">Azure Container Apps <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">Azure App Insights <span class="exp-tag">2 years</span></div>
-                    <div class="skill-item">Pulumi (1 yr)</div>
+                    <div class="skill-item">Azure<span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">IaC Pulumi<span class="exp-tag">3 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">CI/CD & DevOps</div>
-                    <div class="skill-item">Azure DevOps <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">Jenkins <span class="exp-tag">4 years</span></div>
-                    <div class="skill-item">PowerShell <span class="exp-tag">5 years</span></div>
-                    <div class="skill-item">Docker <span class="exp-tag">4 years</span></div>
-                    <div class="skill-item">Git <span class="exp-tag">8 years</span></div>
-                    <div class="skill-item">WSL <span class="exp-tag">2 years</span></div>
+                    <div class="skill-item">Azure DevOps <span class="exp-tag">8 years</span></div>
+                    <div class="skill-item">Jenkins <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">PowerShell <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">Docker <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">Git <span class="exp-tag">9 years</span></div>
+                    <div class="skill-item">WSL <span class="exp-tag">3 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Architecture & Testing</div>
                     <div class="skill-item">Microservices <span class="exp-tag">6 years</span></div>
                     <div class="skill-item">API Versioning <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">TDD <span class="exp-tag">5 years</span></div>
+                    <div class="skill-item">TDD <span class="exp-tag">6 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Tools</div>
-                    <div class="skill-item">VS Code <span class="exp-tag">6 years</span></div>
-                    <div class="skill-item">Visual Studio <span class="exp-tag">8 years</span></div>
-                    <div class="skill-item">Postman <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">VS Code <span class="exp-tag">9 years</span></div>
+                    <div class="skill-item">Visual Studio <span class="exp-tag">9 years</span></div>
+                    <div class="skill-item">Postman <span class="exp-tag">7 years</span></div>
                     <div class="skill-item">JMeter <span class="exp-tag">3 years</span></div>
-                    <div class="skill-item">Draw.io <span class="exp-tag">4 years</span></div>
+                    <div class="skill-item">Draw.io <span class="exp-tag">6 years</span></div>
                 </div>
             </div>
         </div>
@@ -753,9 +767,44 @@
     </div>
 
     <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+            <div class="subsection-title">
+                <h3 class="title">Knowledge Institute of Technology</h3>
+                <h3 class="title">June 2011 - March 2015</h3>
+            </div>
+            <div class="subsection-details">
+                <p>Bachelor of Engineering in Electronics and Communication - <strong>8.1 CGPA</strong></p>
+                <p>Tamil Nadu</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="subsection-title">
+                <h3 class="title">Senthil Matric. Hr. Sec. School</h3>
+                <h3 class="title">June 2010 - March 2011</h3>
+            </div>
+            <div class="subsection-details">
+                <p>12<sup>th</sup> Computer Science - <strong>78%</strong></p>
+                <p>Tamil Nadu</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
         <div class="section-title">Languages</div>
         <ul>
             <li>English — Professional Proficiency</li>
+        </ul>
+    </div>
+    <div class="hobby-section">
+        <div class="section-title">Hobbies & Interests</div>
+        <ul>
+            <li>3D Modeling and 3D Printing</li>
+            <li>DIY Electonic Projects</li>
+            <li>Reading tech blogs and exploring emerging technologies</li>
+            <li>Contributing to open-source projects</li>
+            <li>Mentoring junior developers and knowledge sharing</li>
+            <li>Traveling and cultural exploration</li>
         </ul>
     </div>
 </body>
