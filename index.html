@@ -280,11 +280,78 @@
         }
 
         .print-btn {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            max-width: 220px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Fixed on desktop only */
+        @media (min-width: 601px) {
+            .print-btn {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                z-index: 999;
+            }
+        }
+
+        /* Static on mobile */
+        @media (max-width: 600px) {
+            .print-btn {
+                position: static;
+                width: 100%;
+                max-width: none;
+                margin: 0 auto 16px;
+                box-shadow: none;
+                border: none;
+                background: none;
+            }
+
+            .print-btn button,
+            .print-btn input[type="file"] {
+                width: 100%;
+            }
+        }
+
+        .print-btn button,
+        .print-btn input[type="file"] {
+            font-size: 0.9em;
+            padding: 8px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .print-btn button:hover {
+            background-color: #005f9e;
+        }
+
+        .print-btn input[type="file"] {
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+        .print-btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media print {
+            .print-btn {
+                display: none !important;
+            }
+        }
+
 
         @media print {
             .print-btn {
@@ -329,500 +396,579 @@
 </head>
 
 <body>
-    <div class="print-btn">
-        <button onclick="window.print()">🖨️ Print
-            Resume</button>
-        <button>💬 <a href="https://wa.me/919524264656" target="_blank">WhatsApp</a></button>
-    </div>
 
-
-    <div class="header">
-        <h1>Jayasuriyan RP</h1>
-        <p>Coimbatore, Tamil Nadu</p>
-        <div class="contact-icons">
-            <span>📧 <a href="mailto:jayasuriyan.rp@outlook.com">jayasuriyan.rp@outlook.com</a></span>
-            <span>📞 <a href="tel:+919524264656">+91 95242 64656</a></span>
-            <span>💻<a href="https://github.com/JayasuriyanRP" target="_blank"> github.com/jayasuriyan</a></span>
-            <span>🔗<a href="https://www.linkedin.com/in/jayasuriyan/" target="_blank">
-                    linkedin.com/in/jayasuriyan</a></span>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Professional Summary</div>
-        <p>
-            Strategic and results-driven Technical Specialist with 10+ years of experience delivering high-impact
-            full-stack software solutions using Golang, .NET Core, C#, React, and Angular. Proficient in architecting
-            scalable microservices, building cloud-native applications on Azure, and streamlining DevOps pipelines.
-            Adept at mentoring cross-functional teams, driving innovation through automation and scripting, and
-            consistently aligning technical initiatives with business goals.
-        </p>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Experience</div>
-        <div class="subsection">
-            <div class="subsection-title">
-                <h3 class="title">Bosch Global Software Technologies (BGSW)</h3>
-                <h3 class="title">March 2022 - June 2025</h3>
+    <body>
+        <div class="print-btn">
+            <button>
+                💬 <a href="https://wa.me/919524264656" target="_blank">Message in WhatsApp</a>
+            </button>
+            <button onclick="window.print()">🖨️ Print Resume</button>
+            <div>
+                <p>Compress Any PDF</p>
+                <input type="file" id="pdfInput" accept="application/pdf">
+                <button onclick="compressPDFviaCanvas()">🗜️ Compress PDF via Canvas</button>
             </div>
-            <div class="subsection-details">
-                <p>Technical Specialist</p>
-                <p>Coimbatore, TamilNadu</p>
+        </div>
+
+        <!-- The rest of your resume content -->
+
+
+        <div class="header">
+            <h1>Jayasuriyan RP</h1>
+            <p>Coimbatore, Tamil Nadu</p>
+            <div class="contact-icons">
+                <span>📧 <a href="mailto:jayasuriyan.rp@outlook.com">jayasuriyan.rp@outlook.com</a></span>
+                <span>📞 <a href="tel:+919524264656">+91 95242 64656</a></span>
+                <span>💻<a href="https://github.com/JayasuriyanRP" target="_blank"> github.com/jayasuriyan</a></span>
+                <span>🔗<a href="https://www.linkedin.com/in/jayasuriyan/" target="_blank">
+                        linkedin.com/in/jayasuriyan</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p>
+                Strategic and results-driven Technical Specialist with 10+ years of experience delivering high-impact
+                full-stack software solutions using Golang, .NET Core, C#, React, and Angular. Proficient in
+                architecting
+                scalable microservices, building cloud-native applications on Azure, and streamlining DevOps pipelines.
+                Adept at mentoring cross-functional teams, driving innovation through automation and scripting, and
+                consistently aligning technical initiatives with business goals.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Experience</div>
+            <div class="subsection">
+                <div class="subsection-title">
+                    <h3 class="title">Bosch Global Software Technologies (BGSW)</h3>
+                    <h3 class="title">March 2022 - June 2025</h3>
+                </div>
+                <div class="subsection-details">
+                    <p>Technical Specialist</p>
+                    <p>Coimbatore, TamilNadu</p>
+                </div>
+                <div class="entry">
+                    <ul>
+                        <li>Managed cross-functional development teams and delivered over 6 successful releases,
+                            consistently meeting project timelines and stakeholder expectations.</li>
+                        <li>Oversaw the full software development lifecycle (SDLC), from architectural design to
+                            deployment and ongoing support.</li>
+                        <li>Designed and implemented scalable software solutions aligned with partners requirements and
+                            modern engineering standards.</li>
+                        <li>Collaborated closely with product managers, designers, and QA engineers to ensure alignment
+                            and high-quality outcomes.</li>
+                        <li>Mentored junior developers, fostering technical growth and promoting best practices across
+                            the team.</li>
+                        <li>Led peer code reviews to ensure the delivery of clean, maintainable, and production-ready
+                            code.</li>
+                        <li>Stayed current with emerging technologies and industry trends to enhance development
+                            strategies and propose innovation-driven improvements.</li>
+                        <li>Contributed to agile project planning by estimating efforts, scoping requirements, and
+                            managing deliverables.</li>
+                        <li>Diagnosed and resolved complex software issues, while providing post-deployment technical
+                            support.</li>
+                        <li>Continuously analyzed and improved development workflows for better team efficiency and
+                            project throughput.</li>
+                        <li>Actively engaged stakeholders to clarify expectations and provided expert guidance to align
+                            technical efforts with business objectives.</li>
+                    </ul>
+                    <div class="project-section">
+                        <div class="project-title">Projects:</div>
+                        <ul>
+                            <li>
+                                <strong>ctrlX Device Portal</strong> - Developed microservices
+                                for device/license/app management.
+                                <div class="project-skills">
+                                    <span>Golang</span>
+                                    <span>C#</span>
+                                    <span>.NET 6</span>
+                                    <span>.NET 8</span>
+                                    <span>React</span>
+                                    <span>Azure Infrastructure</span>
+                                    <span>Azure DevOps</span>
+                                    <span>Powershell</span>
+                                    <span>Docker</span>
+                                    <span>BDD</span>
+                                    <span>TDD</span>
+                                    <span>Mailjet</span>
+                                    <span>Microservices</span>
+                                    <span>FossID - OSS</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>ctrlX Licensing Service Tools</strong> - Developed an Internal tool for Admin
+                                user
+                                functionalities, Sending Welcomeemail, Expiry Email, Collecting data about license sales
+                                and
+                                etc.
+                                <div class="project-skills">
+                                    <span>Golang</span>
+                                    <span>C#</span>
+                                    <span>Windows Services</span>
+                                    <span>React</span>
+                                    <span>Azure DevOps</span>
+                                    <span>Powershell</span>
+                                    <span>Mailjet</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Drive Sizing</strong> - Resuable component for enabling customers to choose the
+                                correct Drive, Motor, IO's, Controllers, PLC's, Servos, etc.
+                                <div class="project-skills">
+                                    <span>Stencil JS</span>
+                                    <span>C#</span>
+                                    <span>.NET Core 3.1</span>
+                                    <span>TDD</span>
+                                    <span>Azure DevOps</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>ctrlX OS Apps</strong> - Motion, PLC, and CAM apps on Linux-based Operating
+                                system
+                                (ctrlX OS).
+                                <div class="project-skills">
+                                    <span>Angular 17</span>
+                                    <span>C#</span>
+                                    <span>Jenkins</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recognition-card">
+                        <div class="project-title">Recognitions & Achievements:</div>
+                        <ul class="achievement-list">
+                            <li><strong>Bravo Award</strong> - Recognized for valuable contributions and extended
+                                support
+                                across teams during key deliverables.</li>
+                            <li><strong>Champ Skill Award</strong> - Acknowledged for technical leadership and
+                                transparent
+                                communication during the Trusted Account project, including leading architectural
+                                discussions and fostering a collaborative team culture.</li>
+                            <li><strong>Bravo Award</strong> - Commended for outstanding ownership in the Indrasize
+                                project,
+                                driving task prioritization, team onboarding, and proactive participation in key
+                                meetings.
+                            </li>
+                            <li><strong>WOW Award</strong> - Applauded for topic ownership, technical guidance, and
+                                impactful results through dedicated team mentorship and collaboration.</li>
+                            <li><strong>Stand-Out Performer</strong> - Celebrated for quick learning, efficient
+                                delivery,
+                                and proactive contributions in CAM and Motion topics.</li>
+                            <li><strong>You Are My Mentor</strong> - Honored for consistent guidance and delivering
+                                results
+                                through mentorship and leadership.</li>
+                            <li><strong>#Fit.AncHER</strong> - Recognized for collaborative work on MVPs and quick
+                                on-the-job learning of Golang and its implementation.</li>
+                            <li><strong>The Expert</strong> - Acknowledged for technical expertise and contributions in
+                                the
+                                App Launcher task (UMST project).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">
+                    <h3 class="title">ASEA Brown Boveri (ABB)</h3>
+                    <h3 class="title">April 2018 - March 2022</h3>
+                </div>
+                <div class="subsection-details">
+                    <p>Senior Software Engineer</p>
+                    <p>Bangalore, Karnataka</p>
+                </div>
+                <div class="entry">
+                    <ul>
+                        <li>Led cross-functional collaboration with stakeholders, product owners, architects, and
+                            developers
+                            to drive seamless, high-quality application delivery.</li>
+                        <li>Contributed to several major product deliveries, ensuring alignment with business goals,
+                            on-time
+                            execution, and post-release stability.</li>
+                        <li>Worked closely with new team members during onboarding, providing detailed technical
+                            guidance
+                            and knowledge sharing to ensure their full and timely contribution.</li>
+                        <li>Collaborated with the architect to design scalable, modular system architecture that met
+                            performance, maintainability, and business requirements.</li>
+                        <li>Developed responsive and dynamic web applications using React and TypeScript, ensuring
+                            optimal
+                            performance across devices.</li>
+                        <li>Designed and implemented key features from the ground up, adhering to SOLID and DRY
+                            principles
+                            for maintainability and scalability.</li>
+                        <li>Built and maintained robust RESTful APIs using .NET Core, enabling seamless integration with
+                            frontend and external services.</li>
+                        <li>Automated CI/CD pipelines in Azure DevOps, accelerating deployment cycles by 40% and
+                            improving
+                            release reliability.</li>
+                        <li>Actively participated in technical design sessions, code reviews, and team discussions to
+                            ensure
+                            high-quality, peer-reviewed code.</li>
+                    </ul>
+
+                    <div class="project-section">
+                        <div class="project-title">Projects:</div>
+                        <ul>
+                            <li>
+                                <strong>ABB Access</strong> - Mobile platform for After Sales support, product data and
+                                drive registration.
+                                <div class="project-skills">
+                                    <span>.NET Core 3.1</span>
+                                    <span>C#</span>
+                                    <span>React 17 - Functional Components</span>
+                                    <span>HTML</span>
+                                    <span>SaSS</span>
+                                    <span>TypeScript</span>
+                                    <span>Powershell</span>
+                                    <span>Docker</span>
+                                    <span>Azure DevOps</span>
+                                    <span>Azure App Service</span>
+                                    <span>TDD</span>
+                                    <span>Powershell</span>
+                                    <span>Black Duck - OSS</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>ABB Drive Composer</strong> - It is a start-up and maintenance tool for
+                                ABB's common architecture drives. The tool is used to view and set drive parameters, and
+                                to
+                                monitor and tune process performance.
+                                <div class="project-skills">
+                                    <span>Windows Presentation Foundation</span>
+                                    <span>C#</span>
+                                    <span>Azure DevOps</span>
+                                    <span>TDD</span>
+                                    <span>Siemens Step 7</span>
+                                    <span>Siemens TIA Portal</span>
+                                    <span>Wix Installer<span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>ABB Drive Application Builder</strong> - Combine your application knowledge with
+                                the
+                                world-class variable speed drives.
+                                <div class="project-skills">
+                                    <span>Windows Presentation Foundation</span>
+                                    <span>Windows Forms</span>
+                                    <span>C#</span>
+                                    <span>Azure DevOps</span>
+                                    <span>Siemens Step 7</span>
+                                    <span>Siemens TIA Portal</span>
+                                    <span>Flexera Install Shield<span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="recognition-card">
+                        <div class="project-title">Recognitions & Achievements:</div>
+                        <ul class="achievement-list">
+                            <li><strong>Spot Award</strong> - Honored at ABB for outstanding delivery and exceeding
+                                performance expectations during critical project milestones.</li>
+                            <li><strong>On the Fly Award</strong> - Recognized for swift and proactive resolution of
+                                high-impact bugs under tight deadlines.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">
+                    <h3 class="title">Quest Global - GE Oil & Gas</h3>
+                    <h3 class="title">August 2015 - March 2018</h3>
+                </div>
+                <div class="subsection-details">
+                    <p>Software Engineer</p>
+                    <p>Bangalore, Karnataka</p>
+                </div>
+                <div class="entry">
+                    <ul>
+                        <li>Collaborated with stakeholders to analyze and understand detailed business and technical
+                            requirements.</li>
+                        <li>Decomposed user stories and modules into manageable development tasks aligned with Agile
+                            best
+                            practices.</li>
+                        <li>Created comprehensive conceptual and detailed design documents to ensure clarity and
+                            alignment
+                            across teams.</li>
+                        <li>Reviewed and clarified acceptance criteria to ensure complete and accurate implementation of
+                            features.</li>
+                        <li>Implemented modules based on defined tasks, following clean code principles and established
+                            design patterns.</li>
+                        <li>Developed and maintained unit tests to validate functionality and ensure long-term code
+                            reliability.</li>
+                    </ul>
+
+                    <div class="project-section">
+                        <div class="project-title">Projects:</div>
+                        <ul>
+                            <li>
+                                <strong>System 1* Application Development Kit (SDK)</strong> - Windows Application for
+                                creating Digital Twin of Industrial Assets.
+                                <div class="project-skills">
+                                    <span>Windows Presentation Foundation</span>
+                                    <span>C#</span>
+                                    <span>PRISM</span>
+                                    <span>Azure DevOps</span>
+                                    <span>TDD</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="recognition-card">
+                        <div class="project-title">Recognitions & Achievements:</div>
+                        <ul class="achievement-list">
+                            <li><strong>Team of the Year - 2016</strong> - Celebrated for exemplifying the core value of
+                                teamwork
+                                and collaborative excellence.</li>
+                            <li><strong>Team of the Year - 2015</strong> - Received client recognition for delivering a
+                                high-quality, bug-free product within the committed timeline.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="entry">
+                <div class="skills-grid">
+                    <div>
+                        <h4 class="skill-category">Backend</h4>
+                        <ul>
+                            <li><strong>C#</strong> — 9 years</li>
+                            <li><strong>Golang</strong> — 3 years</li>
+                            <li><strong>TypeScript</strong> — 6 years</li>
+                            <li><strong>.NET Core</strong> — 6 years</li>
+                            <li><strong>.NET Framework</strong> — 5 years</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="skill-category">Frontend</h4>
+                        <ul>
+                            <li><strong>React</strong> — 6 years</li>
+                            <li><strong>Angular</strong> — 1 year</li>
+                            <li><strong>Stencil JS</strong> — 1 year</li>
+                            <li><strong>SASS</strong> — 3 years</li>
+                            <li><strong>HTML/CSS</strong> — 8 years</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="skill-category">Database</h4>
+                        <ul>
+                            <li><strong>Azure Cosmos DB</strong> — 3 years</li>
+                            <li><strong>SQLite</strong> — 2 years</li>
+                            <li><strong>Entity Framework</strong> — 6 years</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="skill-category">Cloud & Infrastructure</h4>
+                        <ul>
+                            <li><strong>Azure</strong> — 6 years</li>
+                            <li><strong>IaC with Pulumi</strong> — 3 years</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="skill-category">CI/CD & DevOps</h4>
+                        <ul>
+                            <li><strong>Azure DevOps</strong> — 8 years</li>
+                            <li><strong>Jenkins</strong> — 3 years</li>
+                            <li><strong>PowerShell</strong> — 6 years</li>
+                            <li><strong>Docker</strong> — 6 years</li>
+                            <li><strong>Git</strong> — 9 years</li>
+                            <li><strong>WSL</strong> — 3 years</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="skill-category">Architecture & Testing</h4>
+                        <ul>
+                            <li><strong>Microservices</strong> — 6 years</li>
+                            <li><strong>API Versioning</strong> — 3 years</li>
+                            <li><strong>TDD</strong> — 6 years</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="skill-category">Tools</h4>
+                        <ul>
+                            <li><strong>VS Code</strong> — 9 years</li>
+                            <li><strong>Visual Studio</strong> — 9 years</li>
+                            <li><strong>Postman</strong> — 7 years</li>
+                            <li><strong>JMeter</strong> — 3 years</li>
+                            <li><strong>Draw.io</strong> — 6 years</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <div class="section-title">Certifications</div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Software Design and Architecture Specialization</strong><br>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/BWNVAP6PU2RY"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>React - The Complete Guide</strong><br>
+                        <a href="https://www.udemy.com/certificate/UC-4a750d-0124-4d68-bfb9-d5b6bb310a6a/"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Angular JS</strong><br>
+                        <a href="https://www.udemy.com/certificate/UC-ad2ebedf-76f7-4bd7-974c-f696570f52f3/"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Front End Development Libraries</strong><br>
+                        <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/front-end-development-libraries"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>JavaScript Algorithms and Data Structures (Beta)</strong><br>
+                        <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/javascript-algorithms-and-data-structures-v8"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Responsive Web Design</strong><br>
+                        <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/responsive-web-design"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Relational Database</strong><br>
+                        <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/relational-database-v8"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Go: The Complete Developer's Guide</strong><br>
+                        <a href="https://bgsw.udemy.com/certificate/UC-46f98bcc-cd6b-4104-a4bd-e6d70fe62780/"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>React Native - The Practical Guide [2023]</strong><br>
+                        <a href="https://bgsw.udemy.com/certificate/UC-aa22344d-473b-4e44-a2e4-78f0ac0fbe87/"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🏅</span>
+                    <div> <strong>Web Components & Stencil.js</strong><br>
+                        <a href="https://bgsw.udemy.com/certificate/UC-b8ba8f68-79ea-43fe-a61b-8d4607e8bac3/"
+                            target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="entry">
+                <div class="subsection-title">
+                    <h3 class="title">Knowledge Institute of Technology</h3>
+                    <h3 class="title">June 2011 - March 2015</h3>
+                </div>
+                <div class="subsection-details">
+                    <p>Bachelor of Engineering in Electronics and Communication - <strong>8.1 CGPA</strong></p>
+                    <p>Tamil Nadu</p>
+                </div>
             </div>
             <div class="entry">
-                <ul>
-                    <li>Managed cross-functional development teams and delivered over 6 successful releases,
-                        consistently meeting project timelines and stakeholder expectations.</li>
-                    <li>Oversaw the full software development lifecycle (SDLC), from architectural design to
-                        deployment and ongoing support.</li>
-                    <li>Designed and implemented scalable software solutions aligned with partners requirements and
-                        modern engineering standards.</li>
-                    <li>Collaborated closely with product managers, designers, and QA engineers to ensure alignment
-                        and high-quality outcomes.</li>
-                    <li>Mentored junior developers, fostering technical growth and promoting best practices across
-                        the team.</li>
-                    <li>Led peer code reviews to ensure the delivery of clean, maintainable, and production-ready
-                        code.</li>
-                    <li>Stayed current with emerging technologies and industry trends to enhance development
-                        strategies and propose innovation-driven improvements.</li>
-                    <li>Contributed to agile project planning by estimating efforts, scoping requirements, and
-                        managing deliverables.</li>
-                    <li>Diagnosed and resolved complex software issues, while providing post-deployment technical
-                        support.</li>
-                    <li>Continuously analyzed and improved development workflows for better team efficiency and
-                        project throughput.</li>
-                    <li>Actively engaged stakeholders to clarify expectations and provided expert guidance to align
-                        technical efforts with business objectives.</li>
-                </ul>
-                <div class="project-section">
-                    <div class="project-title">Projects:</div>
-                    <ul>
-                        <li>
-                            <strong>ctrlX Device Portal</strong> - Developed microservices
-                            for device/license/app management.
-                            <div class="project-skills">
-                                <span>Golang</span>
-                                <span>C#</span>
-                                <span>.NET 6</span>
-                                <span>.NET 8</span>
-                                <span>React</span>
-                                <span>Azure Infrastructure</span>
-                                <span>Azure DevOps</span>
-                                <span>Powershell</span>
-                                <span>Docker</span>
-                                <span>BDD</span>
-                                <span>TDD</span>
-                                <span>Mailjet</span>
-                                <span>Microservices</span>
-                                <span>FossID - OSS</span>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>ctrlX Licensing Service Tools</strong> - Developed an Internal tool for Admin user
-                            functionalities, Sending Welcomeemail, Expiry Email, Collecting data about license sales and
-                            etc.
-                            <div class="project-skills">
-                                <span>Golang</span>
-                                <span>C#</span>
-                                <span>Windows Services</span>
-                                <span>React</span>
-                                <span>Azure DevOps</span>
-                                <span>Powershell</span>
-                                <span>Mailjet</span>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>Drive Sizing</strong> - Resuable component for enabling customers to choose the
-                            correct Drive, Motor, IO's, Controllers, PLC's, Servos, etc.
-                            <div class="project-skills">
-                                <span>Stencil JS</span>
-                                <span>C#</span>
-                                <span>.NET Core 3.1</span>
-                                <span>TDD</span>
-                                <span>Azure DevOps</span>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>ctrlX OS Apps</strong> - Motion, PLC, and CAM apps on Linux-based Operating system
-                            (ctrlX OS).
-                            <div class="project-skills">
-                                <span>Angular 17</span>
-                                <span>C#</span>
-                                <span>Jenkins</span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="subsection-title">
+                    <h3 class="title">Senthil Matric. Hr. Sec. School</h3>
+                    <h3 class="title">June 2010 - March 2011</h3>
                 </div>
-                <div class="recognition-card">
-                    <div class="project-title">Recognitions & Achievements:</div>
-                    <ul class="achievement-list">
-                        <li><strong>Bravo Award</strong> - Recognized for valuable contributions and extended support
-                            across teams during key deliverables.</li>
-                        <li><strong>Champ Skill Award</strong> - Acknowledged for technical leadership and transparent
-                            communication during the Trusted Account project, including leading architectural
-                            discussions and fostering a collaborative team culture.</li>
-                        <li><strong>Bravo Award</strong> - Commended for outstanding ownership in the Indrasize project,
-                            driving task prioritization, team onboarding, and proactive participation in key meetings.
-                        </li>
-                        <li><strong>WOW Award</strong> - Applauded for topic ownership, technical guidance, and
-                            impactful results through dedicated team mentorship and collaboration.</li>
-                        <li><strong>Stand-Out Performer</strong> - Celebrated for quick learning, efficient delivery,
-                            and proactive contributions in CAM and Motion topics.</li>
-                        <li><strong>You Are My Mentor</strong> - Honored for consistent guidance and delivering results
-                            through mentorship and leadership.</li>
-                        <li><strong>#Fit.AncHER</strong> - Recognized for collaborative work on MVPs and quick
-                            on-the-job learning of Golang and its implementation.</li>
-                        <li><strong>The Expert</strong> - Acknowledged for technical expertise and contributions in the
-                            App Launcher task (UMST project).</li>
-                    </ul>
+                <div class="subsection-details">
+                    <p>12<sup>th</sup> Computer Science - <strong>78%</strong></p>
+                    <p>Tamil Nadu</p>
                 </div>
             </div>
         </div>
 
-        <div class="subsection">
-            <div class="subsection-title">
-                <h3 class="title">ASEA Brown Boveri (ABB)</h3>
-                <h3 class="title">April 2018 - March 2022</h3>
-            </div>
-            <div class="subsection-details">
-                <p>Senior Software Engineer</p>
-                <p>Bangalore, Karnataka</p>
-            </div>
-            <div class="entry">
-                <ul>
-                    <li>Led cross-functional collaboration with stakeholders, product owners, architects, and developers
-                        to drive seamless, high-quality application delivery.</li>
-                    <li>Contributed to several major product deliveries, ensuring alignment with business goals, on-time
-                        execution, and post-release stability.</li>
-                    <li>Worked closely with new team members during onboarding, providing detailed technical guidance
-                        and knowledge sharing to ensure their full and timely contribution.</li>
-                    <li>Collaborated with the architect to design scalable, modular system architecture that met
-                        performance, maintainability, and business requirements.</li>
-                    <li>Developed responsive and dynamic web applications using React and TypeScript, ensuring optimal
-                        performance across devices.</li>
-                    <li>Designed and implemented key features from the ground up, adhering to SOLID and DRY principles
-                        for maintainability and scalability.</li>
-                    <li>Built and maintained robust RESTful APIs using .NET Core, enabling seamless integration with
-                        frontend and external services.</li>
-                    <li>Automated CI/CD pipelines in Azure DevOps, accelerating deployment cycles by 40% and improving
-                        release reliability.</li>
-                    <li>Actively participated in technical design sessions, code reviews, and team discussions to ensure
-                        high-quality, peer-reviewed code.</li>
-                </ul>
-
-                <div class="project-section">
-                    <div class="project-title">Projects:</div>
-                    <ul>
-                        <li>
-                            <strong>ABB Access</strong> - Mobile platform for After Sales support, product data and
-                            drive registration.
-                            <div class="project-skills">
-                                <span>.NET Core 3.1</span>
-                                <span>C#</span>
-                                <span>React 17 - Functional Components</span>
-                                <span>HTML</span>
-                                <span>SaSS</span>
-                                <span>TypeScript</span>
-                                <span>Powershell</span>
-                                <span>Docker</span>
-                                <span>Azure DevOps</span>
-                                <span>Azure App Service</span>
-                                <span>TDD</span>
-                                <span>Powershell</span>
-                                <span>Black Duck - OSS</span>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>ABB Drive Composer</strong> - It is a start-up and maintenance tool for
-                            ABB's common architecture drives. The tool is used to view and set drive parameters, and to
-                            monitor and tune process performance.
-                            <div class="project-skills">
-                                <span>Windows Presentation Foundation</span>
-                                <span>C#</span>
-                                <span>Azure DevOps</span>
-                                <span>TDD</span>
-                                <span>Siemens Step 7</span>
-                                <span>Siemens TIA Portal</span>
-                                <span>Wix Installer<span>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>ABB Drive Application Builder</strong> - Combine your application knowledge with the
-                            world-class variable speed drives.
-                            <div class="project-skills">
-                                <span>Windows Presentation Foundation</span>
-                                <span>Windows Forms</span>
-                                <span>C#</span>
-                                <span>Azure DevOps</span>
-                                <span>Siemens Step 7</span>
-                                <span>Siemens TIA Portal</span>
-                                <span>Flexera Install Shield<span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="recognition-card">
-                    <div class="project-title">Recognitions & Achievements:</div>
-                    <ul class="achievement-list">
-                        <li><strong>Spot Award</strong> - Honored at ABB for outstanding delivery and exceeding
-                            performance expectations during critical project milestones.</li>
-                        <li><strong>On the Fly Award</strong> - Recognized for swift and proactive resolution of
-                            high-impact bugs under tight deadlines.</li>
-                    </ul>
-                </div>
-
-            </div>
+        <div class="section">
+            <div class="section-title">Languages</div>
+            <ul>
+                <li>English — Professional Proficiency</li>
+            </ul>
         </div>
-
-        <div class="subsection">
-            <div class="subsection-title">
-                <h3 class="title">Quest Global - GE Oil & Gas</h3>
-                <h3 class="title">August 2015 - March 2018</h3>
-            </div>
-            <div class="subsection-details">
-                <p>Software Engineer</p>
-                <p>Bangalore, Karnataka</p>
-            </div>
-            <div class="entry">
-                <ul>
-                    <li>Collaborated with stakeholders to analyze and understand detailed business and technical
-                        requirements.</li>
-                    <li>Decomposed user stories and modules into manageable development tasks aligned with Agile best
-                        practices.</li>
-                    <li>Created comprehensive conceptual and detailed design documents to ensure clarity and alignment
-                        across teams.</li>
-                    <li>Reviewed and clarified acceptance criteria to ensure complete and accurate implementation of
-                        features.</li>
-                    <li>Implemented modules based on defined tasks, following clean code principles and established
-                        design patterns.</li>
-                    <li>Developed and maintained unit tests to validate functionality and ensure long-term code
-                        reliability.</li>
-                </ul>
-
-                <div class="project-section">
-                    <div class="project-title">Projects:</div>
-                    <ul>
-                        <li>
-                            <strong>System 1* Application Development Kit (SDK)</strong> - Windows Application for
-                            creating Digital Twin of Industrial Assets.
-                            <div class="project-skills">
-                                <span>Windows Presentation Foundation</span>
-                                <span>C#</span>
-                                <span>PRISM</span>
-                                <span>Azure DevOps</span>
-                                <span>TDD</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="recognition-card">
-                    <div class="project-title">Recognitions & Achievements:</div>
-                    <ul class="achievement-list">
-                        <li><strong>Team of the Year - 2016</strong> - Celebrated for exemplifying the core value of
-                            teamwork
-                            and collaborative excellence.</li>
-                        <li><strong>Team of the Year - 2015</strong> - Received client recognition for delivering a
-                            high-quality, bug-free product within the committed timeline.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="section hobby-section">
+            <div class="section-title">Hobbies & Interests</div>
+            <p>I pursue a variety of technical and creative hobbies that fuel innovation and personal growth:</p>
+            <ul>
+                <li>3D Modeling and 3D Printing</li>
+                <li>DIY Electonic Projects</li>
+                <li>Reading tech blogs and exploring emerging technologies</li>
+                <li>Contributing to open-source projects</li>
+                <li>Mentoring junior developers and knowledge sharing</li>
+                <li>Traveling and cultural exploration</li>
+            </ul>
         </div>
-    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <div class="section">
-        <div class="section-title">Technical Skills</div>
-        <div class="entry">
-            <div class="skills-grid">
-                <div>
-                    <h4 class="skill-category">Backend</h4>
-                    <ul>
-                        <li><strong>C#</strong> — 9 years</li>
-                        <li><strong>Golang</strong> — 3 years</li>
-                        <li><strong>TypeScript</strong> — 6 years</li>
-                        <li><strong>.NET Core</strong> — 6 years</li>
-                        <li><strong>.NET Framework</strong> — 5 years</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category">Frontend</h4>
-                    <ul>
-                        <li><strong>React</strong> — 6 years</li>
-                        <li><strong>Angular</strong> — 1 year</li>
-                        <li><strong>Stencil JS</strong> — 1 year</li>
-                        <li><strong>SASS</strong> — 3 years</li>
-                        <li><strong>HTML/CSS</strong> — 8 years</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category">Database</h4>
-                    <ul>
-                        <li><strong>Azure Cosmos DB</strong> — 3 years</li>
-                        <li><strong>SQLite</strong> — 2 years</li>
-                        <li><strong>Entity Framework</strong> — 6 years</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category">Cloud & Infrastructure</h4>
-                    <ul>
-                        <li><strong>Azure</strong> — 6 years</li>
-                        <li><strong>IaC with Pulumi</strong> — 3 years</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category">CI/CD & DevOps</h4>
-                    <ul>
-                        <li><strong>Azure DevOps</strong> — 8 years</li>
-                        <li><strong>Jenkins</strong> — 3 years</li>
-                        <li><strong>PowerShell</strong> — 6 years</li>
-                        <li><strong>Docker</strong> — 6 years</li>
-                        <li><strong>Git</strong> — 9 years</li>
-                        <li><strong>WSL</strong> — 3 years</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category">Architecture & Testing</h4>
-                    <ul>
-                        <li><strong>Microservices</strong> — 6 years</li>
-                        <li><strong>API Versioning</strong> — 3 years</li>
-                        <li><strong>TDD</strong> — 6 years</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category">Tools</h4>
-                    <ul>
-                        <li><strong>VS Code</strong> — 9 years</li>
-                        <li><strong>Visual Studio</strong> — 9 years</li>
-                        <li><strong>Postman</strong> — 7 years</li>
-                        <li><strong>JMeter</strong> — 3 years</li>
-                        <li><strong>Draw.io</strong> — 6 years</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+        <script>
+            async function compressPDFviaCanvas() {
+                const input = document.getElementById('pdfInput');
+                if (!input.files.length) {
+                    alert('Please upload a PDF first!');
+                    return;
+                }
+
+                const file = input.files[0];
+                const reader = new FileReader();
+
+                reader.onload = async function () {
+                    const pdfData = new Uint8Array(reader.result);
+                    const loadingTask = pdfjsLib.getDocument({ data: pdfData });
+                    const pdf = await loadingTask.promise;
+
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const viewport = page.getViewport({ scale: 1.5 });
+
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        await page.render({ canvasContext: context, viewport: viewport }).promise;
+
+                        const imgData = canvas.toDataURL('image/jpeg', 0.5); // adjust quality here (0.1–1.0)
+
+                        if (i > 1) doc.addPage();
+                        doc.addImage(imgData, 'JPEG', 0, 0, 210, 297); // A4 dimensions in mm
+                    }
+
+                    doc.save("Resume_Compressed.pdf");
+                };
+
+                reader.readAsArrayBuffer(file);
+            }
+        </script>
 
 
-    <div class="section">
-        <div class="section-title">Certifications</div>
-        <div class="cert-grid">
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Software Design and Architecture Specialization</strong><br>
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/BWNVAP6PU2RY"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>React - The Complete Guide</strong><br>
-                    <a href="https://www.udemy.com/certificate/UC-4a750d-0124-4d68-bfb9-d5b6bb310a6a/"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Angular JS</strong><br>
-                    <a href="https://www.udemy.com/certificate/UC-ad2ebedf-76f7-4bd7-974c-f696570f52f3/"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Front End Development Libraries</strong><br>
-                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/front-end-development-libraries"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>JavaScript Algorithms and Data Structures (Beta)</strong><br>
-                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/javascript-algorithms-and-data-structures-v8"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Responsive Web Design</strong><br>
-                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/responsive-web-design"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Relational Database</strong><br>
-                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/relational-database-v8"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Go: The Complete Developer's Guide</strong><br>
-                    <a href="https://bgsw.udemy.com/certificate/UC-46f98bcc-cd6b-4104-a4bd-e6d70fe62780/"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>React Native - The Practical Guide [2023]</strong><br>
-                    <a href="https://bgsw.udemy.com/certificate/UC-aa22344d-473b-4e44-a2e4-78f0ac0fbe87/"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <span class="cert-icon">🏅</span>
-                <div> <strong>Web Components & Stencil.js</strong><br>
-                    <a href="https://bgsw.udemy.com/certificate/UC-b8ba8f68-79ea-43fe-a61b-8d4607e8bac3/"
-                        target="_blank">View Certificate</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Education</div>
-        <div class="entry">
-            <div class="subsection-title">
-                <h3 class="title">Knowledge Institute of Technology</h3>
-                <h3 class="title">June 2011 - March 2015</h3>
-            </div>
-            <div class="subsection-details">
-                <p>Bachelor of Engineering in Electronics and Communication - <strong>8.1 CGPA</strong></p>
-                <p>Tamil Nadu</p>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="subsection-title">
-                <h3 class="title">Senthil Matric. Hr. Sec. School</h3>
-                <h3 class="title">June 2010 - March 2011</h3>
-            </div>
-            <div class="subsection-details">
-                <p>12<sup>th</sup> Computer Science - <strong>78%</strong></p>
-                <p>Tamil Nadu</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Languages</div>
-        <ul>
-            <li>English — Professional Proficiency</li>
-        </ul>
-    </div>
-    <div class="section hobby-section">
-        <div class="section-title">Hobbies & Interests</div>
-        <p>I pursue a variety of technical and creative hobbies that fuel innovation and personal growth:</p>
-        <ul>
-            <li>3D Modeling and 3D Printing</li>
-            <li>DIY Electonic Projects</li>
-            <li>Reading tech blogs and exploring emerging technologies</li>
-            <li>Contributing to open-source projects</li>
-            <li>Mentoring junior developers and knowledge sharing</li>
-            <li>Traveling and cultural exploration</li>
-        </ul>
-    </div>
-</body>
+    </body>
 
 </html>
