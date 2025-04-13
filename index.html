@@ -210,18 +210,23 @@
 
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 10px;
         }
 
         .cert-card {
-            background: #f4faff;
-            border: 1px solid #cce6ff;
-            border-radius: 6px;
-            padding: 10px;
+            background: #f8f0e5;
+            /* border: 1px solid #cce6ff; */
+            border-left: 3px solid #eb9e2b;
+            border-radius: 10px;
+            padding: 5px;
             display: flex;
             align-items: flex-start;
             font-size: 0.9em;
+        }
+
+        .cert-card strong {
+            font-size: 0.75rem;
         }
 
         .cert-card a {
@@ -238,6 +243,61 @@
         .cert-icon {
             margin-right: 6px;
         }
+
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #007acc;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f4ff;
+            border: 1px solid #cfdfff;
+            padding: 2px 4px;
+            border-radius: 6px;
+            margin-bottom: 3px;
+            font-size: 1em;
+        }
+
+        .exp-tag {
+            background-color: #d8f5e3;
+            color: #1e7d4d;
+            font-size: 0.85em;
+            padding: 2px 8px;
+            border-radius: 8px;
+            min-width: 48px;
+            text-align: center;
+        }
+
+        @media print {
+            * {
+                color: black;
+                /* Ensure text color is black for printing */
+                /* background-color: white; */
+                /* Set background color to white */
+            }
+
+            /* Retain the background color for any elements you want to show */
+            .highlight {
+                background-color: yellow;
+            }
+
+            /* Make sure links are visible */
+            a {
+                color: blue;
+                /* Or any color you prefer */
+            }
+        }
     </style>
 </head>
 
@@ -246,10 +306,11 @@
         <h1>Jayasuriyan RP</h1>
         <p>Coimbatore, Tamil Nadu</p>
         <div class="contact-icons">
-            <span>📧 jayasuriyan.rp@outlook.com</span>
-            <span>📞 +91-9524264656</span>
-            <span>💻 github.com/jayasuriyan</span>
-            <span>🔗 linkedin.com/in/jayasuriyan</span>
+            <span>📧 <a href="mailto:jayasuriyan.rp@outlook.com">jayasuriyan.rp@outlook.com</a></span>
+            <span>📞 <a href="tel:+919524264656">+91 95242 64656</a></span>
+            <span>💻<a href="https://github.com/JayasuriyanRP" target="_blank"> github.com/jayasuriyan</a></span>
+            <span>🔗<a href="https://www.linkedin.com/in/jayasuriyan/" target="_blank">
+                    linkedin.com/in/jayasuriyan</a></span>
         </div>
     </div>
 
@@ -562,54 +623,54 @@
             <div class="skills-grid">
                 <div>
                     <div class="skill-category">Backend</div>
-                    <div class="skill-item">C# (8 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Golang (4 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Typescript (3 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Dotnet Core (7 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Dotnet Framework (6 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">C# <span class="exp-tag">8 years</span></div>
+                    <div class="skill-item">Golang <span class="exp-tag">4 years</span></div>
+                    <div class="skill-item">Typescript <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">Dotnet Core <span class="exp-tag">7 years</span></div>
+                    <div class="skill-item">Dotnet Framework <span class="exp-tag">6 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Frontend</div>
-                    <div class="skill-item">React (3 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Angular (4 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Stencil Js (2 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">SASS (2 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">HTML/CSS (8 yrs, ★★★★★)</div>
+                    <div class="skill-item">React <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">Angular <span class="exp-tag">4 years</span></div>
+                    <div class="skill-item">Stencil Js <span class="exp-tag">2 years</span></div>
+                    <div class="skill-item">SASS <span class="exp-tag">2 years</span></div>
+                    <div class="skill-item">HTML/CSS <span class="exp-tag">8 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Database</div>
-                    <div class="skill-item">Azure Cosmos DB (3 yrs, ★★★★☆)</div>
-                    <div class="skill-item">SQLite (2 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">Entity Framework (6 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Azure Cosmos DB <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">SQLite <span class="exp-tag">2 years</span></div>
+                    <div class="skill-item">Entity Framework <span class="exp-tag">6 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Cloud</div>
-                    <div class="skill-item">Azure Container Apps (3 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Azure App Insights (2 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">Pulumi (1 yr, ★★★☆☆)</div>
+                    <div class="skill-item">Azure Container Apps <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">Azure App Insights <span class="exp-tag">2 years</span></div>
+                    <div class="skill-item">Pulumi (1 yr)</div>
                 </div>
                 <div>
                     <div class="skill-category">CI/CD & DevOps</div>
-                    <div class="skill-item">Azure DevOps (6 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Jenkins (4 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">PowerShell (5 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Docker (4 yrs, ★★★★☆)</div>
-                    <div class="skill-item">Git (8 yrs, ★★★★★)</div>
-                    <div class="skill-item">WSL (2 yrs, ★★★☆☆)</div>
+                    <div class="skill-item">Azure DevOps <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">Jenkins <span class="exp-tag">4 years</span></div>
+                    <div class="skill-item">PowerShell <span class="exp-tag">5 years</span></div>
+                    <div class="skill-item">Docker <span class="exp-tag">4 years</span></div>
+                    <div class="skill-item">Git <span class="exp-tag">8 years</span></div>
+                    <div class="skill-item">WSL <span class="exp-tag">2 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Architecture & Testing</div>
-                    <div class="skill-item">Microservices (6 yrs, ★★★★☆)</div>
-                    <div class="skill-item">API Versioning (3 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">TDD (5 yrs, ★★★★☆)</div>
+                    <div class="skill-item">Microservices <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">API Versioning <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">TDD <span class="exp-tag">5 years</span></div>
                 </div>
                 <div>
                     <div class="skill-category">Tools</div>
-                    <div class="skill-item">VS Code (6 yrs, ★★★★★)</div>
-                    <div class="skill-item">Visual Studio (8 yrs, ★★★★★)</div>
-                    <div class="skill-item">Postman (6 yrs, ★★★★☆)</div>
-                    <div class="skill-item">JMeter (3 yrs, ★★★☆☆)</div>
-                    <div class="skill-item">Draw.io (4 yrs, ★★★★☆)</div>
+                    <div class="skill-item">VS Code <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">Visual Studio <span class="exp-tag">8 years</span></div>
+                    <div class="skill-item">Postman <span class="exp-tag">6 years</span></div>
+                    <div class="skill-item">JMeter <span class="exp-tag">3 years</span></div>
+                    <div class="skill-item">Draw.io <span class="exp-tag">4 years</span></div>
                 </div>
             </div>
         </div>
@@ -619,38 +680,78 @@
         <div class="section-title">Certifications</div>
         <div class="cert-grid">
             <div class="cert-card">
-                <div><span class="cert-icon">🏅</span> <strong>React - The Complete Guide</strong><br>
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Software Design and Architecture Specialization</strong><br>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/BWNVAP6PU2RY"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <span class="cert-icon">🏅</span>
+                <div> <strong>React - The Complete Guide</strong><br>
                     <a href="https://www.udemy.com/certificate/UC-4a750d-0124-4d68-bfb9-d5b6bb310a6a/"
                         target="_blank">View Certificate</a>
                 </div>
             </div>
             <div class="cert-card">
-                <div><span class="cert-icon">🏅</span> <strong>Angular JS</strong><br>
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Angular JS</strong><br>
                     <a href="https://www.udemy.com/certificate/UC-ad2ebedf-76f7-4bd7-974c-f696570f52f3/"
                         target="_blank">View Certificate</a>
                 </div>
             </div>
             <div class="cert-card">
-                <div><span class="cert-icon">🏅</span> <strong>Go: The Complete Developer's Guide</strong><br>
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Front End Development Libraries</strong><br>
+                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/front-end-development-libraries"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <span class="cert-icon">🏅</span>
+                <div> <strong>JavaScript Algorithms and Data Structures (Beta)</strong><br>
+                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/javascript-algorithms-and-data-structures-v8"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Responsive Web Design</strong><br>
+                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/responsive-web-design"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Relational Database</strong><br>
+                    <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/relational-database-v8"
+                        target="_blank">View Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Go: The Complete Developer's Guide</strong><br>
                     <a href="https://bgsw.udemy.com/certificate/UC-46f98bcc-cd6b-4104-a4bd-e6d70fe62780/"
                         target="_blank">View Certificate</a>
                 </div>
             </div>
             <div class="cert-card">
-                <div><span class="cert-icon">🏅</span> <strong>React Native - The Practical Guide [2023]</strong><br>
+                <span class="cert-icon">🏅</span>
+                <div> <strong>React Native - The Practical Guide [2023]</strong><br>
                     <a href="https://bgsw.udemy.com/certificate/UC-aa22344d-473b-4e44-a2e4-78f0ac0fbe87/"
                         target="_blank">View Certificate</a>
                 </div>
             </div>
             <div class="cert-card">
-                <div><span class="cert-icon">🏅</span> <strong>Web Components & Stencil.js</strong><br>
+                <span class="cert-icon">🏅</span>
+                <div> <strong>Web Components & Stencil.js</strong><br>
                     <a href="https://bgsw.udemy.com/certificate/UC-b8ba8f68-79ea-43fe-a61b-8d4607e8bac3/"
                         target="_blank">View Certificate</a>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="section">
         <div class="section-title">Languages</div>
         <ul>
