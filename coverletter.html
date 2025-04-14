@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter Builder - Jayasuriyan RP</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-container {
+            flex: 0.40 1 20%;
+            min-width: 300px;
+        }
+
+        .preview-container {
+            flex: 1 1 50%;
+            min-width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            font-size: 1em;
+            margin-right: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        .preview-container {
+            border-left: 2px solid #eee;
+            padding-left: 20px;
+            background: #f9f9f9;
+        }
+
+        .preview-container h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        #letter-preview {
+            background-color: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007acc;
+        }
+
+        @media (max-width: 768px) {
+
+            .form-container,
+            .preview-container {
+                flex: 1 1 100%;
+            }
+
+            .preview-container {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+
+        @media print {
+            .form-container {
+                display: none !important;
+            }
+
+            .preview-title {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>📝 Fill in Your Details</h2>
+
+        <label for="date">Date</label>
+        <input type="date" id="date">
+
+        <label for="manager">Hiring Manager's Name</label>
+        <input type="text" id="manager" placeholder="e.g. Ms. Priya Sharma">
+
+        <label for="company">Company Name</label>
+        <input type="text" id="company" placeholder="e.g. Tech Solutions Inc.">
+
+        <label for="address">Company Address</label>
+        <textarea id="address" rows="2" placeholder="e.g. 123 Innovation Street, Bangalore"></textarea>
+
+        <div class="buttons">
+            <button onclick="window.print()">🖨️ Print Resume</button>
+        </div>
+    </div>
+
+    <div class="preview-container">
+        <h2 class="preview-title">📄 Live Preview</h2>
+        <div id="letter-preview"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        const { jsPDF } = window.jspdf;
+
+        const inputs = ["date", "manager", "company", "address"];
+        inputs.forEach(id => {
+            document.getElementById(id).addEventListener("input", updateLetter);
+        });
+
+        function updateLetter() {
+            const date = document.getElementById("date").value;
+            const manager = document.getElementById("manager").value;
+            const company = document.getElementById("company").value;
+            const address = document.getElementById("address").value;
+
+            // Save to localStorage
+            localStorage.setItem("coverDate", date);
+            localStorage.setItem("coverManager", manager);
+            localStorage.setItem("coverCompany", company);
+            localStorage.setItem("coverAddress", address);
+
+            const greetingName = manager.split(" ")[0] || "Hiring Manager";
+
+            const letter = `
+        <p><strong>Jayasuriyan RP</strong><br>
+        Coimbatore, Tamil Nadu<br>
+        📧 jayasuriyan.rp@outlook.com | 📞 +91 95242 64656<br>
+        🔗 <a href="https://www.linkedin.com/in/jayasuriyan" target="_blank">linkedin.com/in/jayasuriyan</a> |
+        💻 <a href="https://github.com/JayasuriyanRP" target="_blank">github.com/JayasuriyanRP</a></p>
+
+        <p>${date}</p>
+
+        <p>${manager}<br>${company}<br>${address}</p>
+
+        <p>Dear ${greetingName},</p>
+
+        <p>
+        As a Technical Specialist with over a decade of experience building and delivering scalable, full-stack software solutions,
+        I am excited to apply for a position that allows me to bring innovative thinking, deep technical expertise,
+        and team leadership to the table.
+        </p>
+
+        <p>
+        In my current role at Bosch Global Software Technologies, I lead the design and delivery of microservice-based solutions
+        using Golang, .NET Core, and Azure. I’ve contributed to critical products such as the ctrlX Device Portal and ctrlX OS Apps,
+        mentored junior engineers, and streamlined DevOps pipelines to ensure rapid, reliable delivery.
+        </p>
+
+        <p>
+        My technical strengths include full-stack development with React & .NET, cloud-native architecture on Azure,
+        and CI/CD automation. I'm passionate about innovation, mentorship, and building high-performance engineering cultures.
+        </p>
+
+        <p>
+        I would welcome the opportunity to contribute my skills to ${company} and would love to discuss how I can support
+        your technical vision. Thank you for your time and consideration.
+        </p>
+
+        <p>Warm regards,<br><strong>Jayasuriyan RP</strong></p>
+      `;
+
+            document.getElementById("letter-preview").innerHTML = letter;
+        }
+
+        // Load from localStorage
+        window.onload = () => {
+            document.getElementById("date").value = localStorage.getItem("coverDate") || '';
+            document.getElementById("manager").value = localStorage.getItem("coverManager") || '';
+            document.getElementById("company").value = localStorage.getItem("coverCompany") || '';
+            document.getElementById("address").value = localStorage.getItem("coverAddress") || '';
+            updateLetter(); // render preview on load
+        };
+    </script>
+</body>
+
+</html>
