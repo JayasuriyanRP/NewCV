@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruiter Message Builder - Jayasuriyan RP</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .form-container {
+        flex: 0.4 1 20%;
+        min-width: 300px;
+      }
+
+      .preview-container {
+        flex: 1 1 50%;
+        min-width: 300px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .buttons {
+        margin-top: 15px;
+      }
+
+      button {
+        background-color: #007acc;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        font-size: 1em;
+        margin-right: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #005fa3;
+      }
+
+      .preview-container {
+        border-left: 2px solid #eee;
+        padding-left: 20px;
+        background: #f9f9f9;
+      }
+
+      .preview-container h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      #message-preview {
+        background-color: white;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        font-size: 1em;
+        line-height: 1.6;
+        white-space: pre-wrap;
+      }
+
+      @media (max-width: 768px) {
+        .form-container,
+        .preview-container {
+          flex: 1 1 100%;
+        }
+
+        .preview-container {
+          border-left: none;
+          padding-left: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>🔧 Fill in Your Details</h2>
+
+      <label for="recruiter">Recruiter's Name</label>
+      <input type="text" id="recruiter" placeholder="e.g. Priya Sharma" />
+
+      <label for="company">Company Name</label>
+      <input type="text" id="company" placeholder="e.g. Tech Solutions Inc." />
+
+      <label for="linkedin">LinkedIn Profile Link</label>
+      <input
+        type="text"
+        id="linkedin"
+        placeholder="e.g. linkedin.com/in/jayasuriyan"
+      />
+
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="e.g. your.email@example.com" />
+
+      <label for="phone">Phone (optional)</label>
+      <input type="text" id="phone" placeholder="e.g. +91 95242 64656" />
+
+      <div class="buttons">
+        <button onclick="generateMessage()">⚙️ Generate Message</button>
+      </div>
+    </div>
+
+    <div class="preview-container">
+      <h2 class="preview-title">📩 Message Preview</h2>
+      <div id="message-preview"></div>
+      <button id="copy-button" onclick="copyMessage()">📋 Copy Message</button>
+    </div>
+
+    <script>
+      const inputs = ["recruiter", "company", "linkedin", "email", "phone"];
+      inputs.forEach((id) => {
+        document.getElementById(id).addEventListener("input", updateLetter);
+      });
+
+      function updateLetter() {
+        const recruiter =
+          document.getElementById("recruiter").value || "Hiring Manager";
+        const company =
+          document.getElementById("company").value || "Target company";
+        const linkedin = document.getElementById("linkedin").value || "#";
+        const email = document.getElementById("email").value || "#";
+        const phone = document.getElementById("phone").value;
+
+        localStorage.setItem("recruiter", recruiter);
+        localStorage.setItem("company", company);
+        localStorage.setItem("linkedin", linkedin);
+        localStorage.setItem("email", email);
+        localStorage.setItem("phone", phone);
+
+        const newMessage = `Hi ${recruiter},
+
+I hope you're doing well! I'm reaching out to explore software engineering opportunities at ${company}. As a Technical Specialist with over a decade of experience building and delivering scalable, full-stack software solutions, I am excited to apply for a position that allows me to bring innovative thinking, deep technical expertise, and team leadership to the table.
+
+In my current role at Bosch Global Software Technologies, I lead the design and delivery of microservice-based solutions using Golang, .NET Core, and Azure. I've contributed to critical products such as the ctrlX Device Portal and ctrlX OS Apps, mentored junior engineers, and streamlined DevOps pipelines to ensure rapid, reliable delivery.
+
+With a strong foundation in full-stack development, cloud-native architecture on Azure, and CI/CD automation, I've had the opportunity to lead a team through multiple successful software releases, delivering robust and scalable solutions that align with real-world operational needs. Additionally, my experience in project coordination, cross-functional collaboration, and maintaining a focus on quality and delivery timelines has given me a well-rounded view of the software development lifecycle.
+
+I'm now looking forward to bringing this blend of technical expertise and leadership to a team that values innovation and impact. If there are any openings where my background could be a strong match, I'd love the chance to connect and learn more.
+
+Thank you for your time and consideration — I'm excited about what's ahead and would really appreciate the opportunity to speak further.
+
+Warm regards,
+Jayasuriyan RP\n<a href="${linkedin}" target="_blank">${linkedin}</a> | <a href="mailto:${email}">${email}</a> ${
+          phone ? `| <a href="tel:${phone}">${phone}</a>` : ""
+        }`;
+
+        const message = `Hi ${recruiter},\n\nI hope you're doing well! I'm reaching out to explore software engineering opportunities at ${company}. With a strong foundation in full-stack development and hands-on experience in the industrial automation domain, I've had the opportunity to lead a team through multiple successful software releases, delivering robust and scalable solutions that align with real-world operational needs.\n\nIn my recent role, I was deeply involved in the entire development lifecycle - from system design and implementation to deployment and continuous improvement. Leading the team gave me valuable experience in project coordination, cross-functional collaboration, and maintaining a strong focus on quality and delivery timelines.\n\nI'm now looking forward to bringing this blend of technical expertise and leadership to a team that values innovation and impact. If there are any openings where my background could be a strong match, I'd love the chance to connect and learn more.\n\nThanks so much for your time - I'm excited about what's ahead and would really appreciate the opportunity to speak further.\n\nWarm regards,\nJayasuriyan RP\n<a href="${linkedin}" target="_blank">${linkedin}</a> | <a href="mailto:${email}">${email}</a> ${
+          phone ? `| <a href="tel:${phone}">${phone}</a>` : ""
+        }`;
+
+        document.getElementById("message-preview").innerHTML = newMessage;
+      }
+
+      window.onload = () => {
+        document.getElementById("recruiter").value =
+          localStorage.getItem("recruiter") || "";
+        document.getElementById("company").value =
+          localStorage.getItem("company") || "";
+        document.getElementById("linkedin").value =
+          localStorage.getItem("linkedin") || "";
+        document.getElementById("email").value =
+          localStorage.getItem("email") || "";
+        document.getElementById("phone").value =
+          localStorage.getItem("phone") || "";
+        updateLetter(); // render preview on load
+      };
+
+      function copyMessage() {
+        const message = document.getElementById("message-preview").innerText;
+        navigator.clipboard.writeText(message).then(() => {
+          alert("Message copied to clipboard!");
+        });
+      }
+    </script>
+  </body>
+</html>
