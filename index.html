@@ -392,15 +392,38 @@
                 color: black !important;
             }
         }
+
+        .print-btn.collapsed button:not(.toggle-btn),
+        .print-btn.collapsed div {
+            display: none;
+        }
+
+        .toggle-btn {
+            background: #3a8d5f !important;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        .print-btn button {
+            margin: 5px 0;
+            display: block;
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
 
     <body>
-        <div class="print-btn">
+        <div class="print-btn collapsed" onclick="event.stopPropagation()">
+            <button class="toggle-btn" onclick="toggleButtons(event)">☰</button>
+
             <button>
-                💬 <a href="https://wa.me/919524264656" target="_blank">Message in WhatsApp</a>
+                💬 <a href="https://wa.me/919524264656" target="_blank" rel="noopener">Message in WhatsApp</a>
             </button>
             <button onclick="window.open('coverletter.html', '_blank')">📄 Open Cover Letter</button>
             <button onclick="window.open('message.html', '_blank')">Message Template</button>
@@ -421,8 +444,8 @@
             <div class="contact-icons">
                 <span>📧 <a href="mailto:jayasuriyan.rp@outlook.com">jayasuriyan.rp@outlook.com</a></span>
                 <span>📞 <a href="tel:+919524264656">+91 95242 64656</a></span>
-                <span>💻<a href="https://github.com/JayasuriyanRP" target="_blank"> github.com/jayasuriyan</a></span>
-                <span>🔗<a href="https://www.linkedin.com/in/jayasuriyan/" target="_blank">
+                <span>💻<a href="https://github.com/JayasuriyanRP" rel="noopener" target="_blank"> github.com/jayasuriyan</a></span>
+                <span>🔗<a href="https://www.linkedin.com/in/jayasuriyan/" rel="noopener" target="_blank">
                         linkedin.com/in/jayasuriyan</a></span>
             </div>
         </div>
@@ -813,70 +836,70 @@
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Software Design and Architecture Specialization</strong><br>
                         <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/BWNVAP6PU2RY"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>React - The Complete Guide</strong><br>
                         <a href="https://www.udemy.com/certificate/UC-4a750d-0124-4d68-bfb9-d5b6bb310a6a/"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Angular JS</strong><br>
                         <a href="https://www.udemy.com/certificate/UC-ad2ebedf-76f7-4bd7-974c-f696570f52f3/"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Front End Development Libraries</strong><br>
                         <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/front-end-development-libraries"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>JavaScript Algorithms and Data Structures (Beta)</strong><br>
                         <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/javascript-algorithms-and-data-structures-v8"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Responsive Web Design</strong><br>
                         <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/responsive-web-design"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Relational Database</strong><br>
                         <a href="https://freecodecamp.org/certification/RP_Jayasuriyan/relational-database-v8"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Go: The Complete Developer's Guide</strong><br>
                         <a href="https://bgsw.udemy.com/certificate/UC-46f98bcc-cd6b-4104-a4bd-e6d70fe62780/"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>React Native - The Practical Guide [2023]</strong><br>
                         <a href="https://bgsw.udemy.com/certificate/UC-aa22344d-473b-4e44-a2e4-78f0ac0fbe87/"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <span class="cert-icon">🏅</span>
                     <div> <strong>Web Components & Stencil.js</strong><br>
                         <a href="https://bgsw.udemy.com/certificate/UC-b8ba8f68-79ea-43fe-a61b-8d4607e8bac3/"
-                            target="_blank">View Certificate</a>
+                            rel="noopener" target="_blank">View Certificate</a>
                     </div>
                 </div>
             </div>
@@ -981,6 +1004,17 @@
 
                 reader.readAsArrayBuffer(file);
             }
+            function toggleButtons(event) {
+                event.stopPropagation();
+                const panel = document.querySelector('.print-btn');
+                panel.classList.toggle('collapsed');
+            }
+
+            // Optional: click anywhere else collapses it again
+            document.addEventListener('click', () => {
+                const panel = document.querySelector('.print-btn');
+                panel.classList.add('collapsed');
+            });
         </script>
 
 
