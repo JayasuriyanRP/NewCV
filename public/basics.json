@@ -1,0 +1,12 @@
+{
+  "name": "Jayasuriyan RP",
+  "location": "Coimbatore, Tamil Nadu",
+  "email": "jayasuriyan.rp@outlook.com",
+  "phone": "+91 95242 64656",
+  "github": "https://github.com/JayasuriyanRP",
+  "linkedin": "https://www.linkedin.com/in/jayasuriyan/",
+  "summary": "Strategic and results-driven Technical Specialist with 10+ years of experience delivering high-impact full-stack software solutions using Golang, .NET Core, C#, React, and Angular. Proficient in architecting scalable microservices, building cloud-native applications on Azure, and streamlining DevOps pipelines. Adept at mentoring cross-functional teams, driving innovation through automation and scripting, and consistently aligning technical initiatives with business goals.",
+  "languages": [
+    { "name": "English", "proficiency": "Professional Proficiency" }
+  ]
+}

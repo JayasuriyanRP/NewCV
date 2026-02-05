@@ -1,0 +1,88 @@
+[
+  {
+    "company": "Bosch Global Software Technologies (BGSW)",
+    "location": "Coimbatore, TamilNadu",
+    "title": "Technical Specialist",
+    "startDate": "March 2022",
+    "endDate": "June 2025",
+    "responsibilities": [
+      "Managed cross-functional development teams and delivered over 6 successful releases, consistently meeting project timelines and stakeholder expectations.",
+      "Oversaw the full software development lifecycle (SDLC), from architectural design to deployment and ongoing support.",
+      "Mentored junior developers, fostering technical growth and promoting best practices across the team.",
+      "Led peer code reviews to ensure the delivery of clean, maintainable, and production-ready code."
+    ],
+    "projects": [
+      {
+        "name": "ctrlX Device Portal",
+        "description": "Developed microservices for device/license/app management.",
+        "technologies": [
+          "Golang",
+          "C#",
+          ".NET 6",
+          ".NET 8",
+          "React",
+          "Azure Infrastructure",
+          "Azure DevOps",
+          "Powershell",
+          "Docker",
+          "BDD",
+          "TDD",
+          "Mailjet",
+          "Microservices",
+          "FossID - OSS"
+        ]
+      },
+      {
+        "name": "ctrlX Licensing Service Tools",
+        "description": "Developed an Internal tool for Admin user functionalities, Sending Welcome email, Expiry Email, Collecting data about license sales and etc.",
+        "technologies": [
+          "Golang",
+          "C#",
+          "Windows Services",
+          "React",
+          "Azure DevOps",
+          "Powershell",
+          "Mailjet"
+        ]
+      }
+    ],
+    "achievements": [
+      "Bravo Award - Recognized for valuable contributions and extended support across teams during key deliverables.",
+      "Champ Skill Award - Acknowledged for technical leadership and transparent communication during the Trusted Account project."
+    ]
+  },
+  {
+    "company": "ASEA Brown Boveri (ABB)",
+    "location": "Bangalore, Karnataka",
+    "title": "Senior Software Engineer",
+    "startDate": "April 2018",
+    "endDate": "March 2022",
+    "responsibilities": [
+      "Led cross-functional collaboration with stakeholders, product owners, architects, and developers to drive seamless, high-quality application delivery.",
+      "Contributed to several major product deliveries, ensuring alignment with business goals, on-time execution, and post-release stability."
+    ],
+    "projects": [
+      {
+        "name": "ABB Access",
+        "description": "Mobile platform for After Sales support, product data and drive registration.",
+        "technologies": [
+          ".NET Core 3.1",
+          "C#",
+          "React 17",
+          "HTML",
+          "SASS",
+          "TypeScript",
+          "Powershell",
+          "Docker",
+          "Azure DevOps",
+          "Azure App Service",
+          "TDD",
+          "Black Duck - OSS"
+        ]
+      }
+    ],
+    "achievements": [
+      "Spot Award - Honored at ABB for outstanding delivery and exceeding performance expectations during critical project milestones."
+    ]
+  }
+]

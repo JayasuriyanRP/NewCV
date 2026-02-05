@@ -1,0 +1,44 @@
+{
+  "name": "modular-resume-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React 19.2 modular resume viewer using JSON data from GitHub",
+  "main": "index.tsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "i18next": "^24.2.3",
+    "material-symbols": "^0.40.2"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.4.1",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "babel-plugin-react-compiler": "^19.0.0-beta-ebf51a3-20250411",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-compiler": "^19.0.0-beta-ebf51a3-20250411",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "globals": "^15.15.0",
+    "prettier": "^3.8.1",
+    "autoprefixer": "^10.4.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-svgr": "^4.5.0"
+  }
+}
