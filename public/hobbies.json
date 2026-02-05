@@ -1,8 +1,11 @@
 [
-  "3D Modeling and 3D Printing",
-  "DIY Electronics Projects",
-  "Reading tech blogs and exploring emerging technologies",
-  "Contributing to open-source projects",
-  "Mentoring junior developers and knowledge sharing",
-  "Traveling and cultural exploration"
+  { "title": "3D Printing", "description": "Making models." },
+  { "title": "DIY Electronics", "description": "Building gadgets." },
+  { "title": "Tech Blogs", "description": "Reading trends." },
+  { "title": "Open Source", "description": "Contributing code." },
+  { "title": "Mentoring", "description": "Helping others." },
+  { "title": "Traveling", "description": "Exploring places." },
+  { "title": "Photography", "description": "Taking photos." },
+  { "title": "Music", "description": "Playing guitar." },
+  { "title": "Fitness", "description": "Staying active." }
 ]

@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 
+export type Achievement = { title: string; description: string };
+
 export default function Achievements({
   url,
   data,
 }: {
   url?: string | null;
-  data?: string[];
+  data?: Achievement[];
 }) {
-  const [achievements, setAchievements] = useState<string[]>(data || []);
+  const [achievements, setAchievements] = useState<Achievement[]>(data || []);
   const [loading, setLoading] = useState(!!url);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,8 +44,11 @@ export default function Achievements({
     >
       <span className="font-semibold">Achievements:</span>
       <ul className="list-disc ml-6">
-        {achievements.map((ach: string, idx: number) => (
-          <li key={idx}>{ach}</li>
+        {achievements.map((ach, idx) => (
+          <li key={idx}>
+            <span className="font-semibold">{ach.title}</span>
+            {ach.description ? ` - ${ach.description}` : ""}
+          </li>
         ))}
       </ul>
     </section>

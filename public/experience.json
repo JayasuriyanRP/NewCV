@@ -1,5 +1,71 @@
 [
   {
+    "company": "Krones Digital Solutions India (KDSI)",
+    "location": "Bangalore, Karnataka",
+    "title": "HMI Developer",
+    "startDate": "June 2025",
+    "endDate": "Present",
+    "responsibilities": [
+      "Full stack developer for HMI Tools applications, involved in end-to-end SDLC and requirement analysis.",
+      "Improved code quality by implementing best practices in both frontend and backend.",
+      "Led code reviews to maintain high standards and code quality.",
+      "Active member of the \"AI Enthusiast\" group, adapting latest AI tools to speed up development.",
+      "Continuously analyzed and improved development workflows for better team efficiency and project throughput.",
+      "Actively engaged stakeholders to clarify expectations and provided expert guidance to align technical efforts with business objectives."
+    ],
+    "projects": [
+      {
+        "name": "RMC Server",
+        "description": "RMC (Remote Machine Control) is a unified remote access solution for Krones HMIs in the new ecosystem with KOP and ThinClients for Ingeniq Lines.",
+        "technologies": [
+          "NATS",
+          "HELM",
+          "Kubernetes",
+          "React TS",
+          ".NET 8",
+          "C#",
+          "React",
+          "Tailwind CSS",
+          "WebComponents",
+          "YARP",
+          "Powershell",
+          "Docker"
+        ]
+      },
+      {
+        "name": "FLASH Web Component",
+        "description": "FLASH UI Components are modular web components that run inside the Krones FLASH HMI shell to deliver machine and line‑level functionality.",
+        "technologies": ["React 18", "PrimeReact", "Tailwind CSS", "TypeScript"]
+      },
+      {
+        "name": "RMC Configuration Tool",
+        "description": "The RMC Configuration Tool is a cloud‑based web application that manages the central configuration used by RMC. It’s responsible for defining the machine landscape and all client permissions, and for providing that configuration as JSON to the runtime systems.",
+        "technologies": [
+          "React 18",
+          "PrimeReact",
+          "Tailwind CSS",
+          "TypeScript",
+          ".NET 8",
+          "Azure Container App",
+          "Bicep",
+          "Tailwind CSS",
+          "TypeScript",
+          "YARP"
+        ]
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Bravo Award",
+        "description": "Recognized for valuable contributions and extended support across teams during key deliverables."
+      },
+      {
+        "title": "Champ Skill Award",
+        "description": "Acknowledged for technical leadership and transparent communication during the Trusted Account project."
+      }
+    ]
+  },
+  {
     "company": "Bosch Global Software Technologies (BGSW)",
     "location": "Coimbatore, TamilNadu",
     "title": "Technical Specialist",
@@ -8,8 +74,15 @@
     "responsibilities": [
       "Managed cross-functional development teams and delivered over 6 successful releases, consistently meeting project timelines and stakeholder expectations.",
       "Oversaw the full software development lifecycle (SDLC), from architectural design to deployment and ongoing support.",
+      "Designed and implemented scalable software solutions aligned with partners requirements and modern engineering standards.",
+      "Collaborated closely with product managers, designers, and QA engineers to ensure alignment and high-quality outcomes.",
       "Mentored junior developers, fostering technical growth and promoting best practices across the team.",
-      "Led peer code reviews to ensure the delivery of clean, maintainable, and production-ready code."
+      "Led peer code reviews to ensure the delivery of clean, maintainable, and production-ready code.",
+      "Stayed current with emerging technologies and industry trends to enhance development strategies and propose innovation-driven improvements.",
+      "Contributed to agile project planning by estimating efforts, scoping requirements, and managing deliverables.",
+      "Diagnosed and resolved complex software issues, while providing post-deployment technical support.",
+      "Continuously analyzed and improved development workflows for better team efficiency and project throughput.",
+      "Actively engaged stakeholders to clarify expectations and provided expert guidance to align technical efforts with business objectives."
     ],
     "projects": [
       {
@@ -44,11 +117,46 @@
           "Powershell",
           "Mailjet"
         ]
+      },
+      {
+        "name": "ctrlX OS Apps",
+        "description": "Motion, PLC, and CAM apps on Linux-based Operating system (ctrlX OS).",
+        "technologies": ["Angular 17", "C#", "Jenkins"]
       }
     ],
     "achievements": [
-      "Bravo Award - Recognized for valuable contributions and extended support across teams during key deliverables.",
-      "Champ Skill Award - Acknowledged for technical leadership and transparent communication during the Trusted Account project."
+      {
+        "title": "Bravo Award",
+        "description": "Recognized for valuable contributions and extended support across teams during key deliverables."
+      },
+      {
+        "title": "Champ Skill Award",
+        "description": "Acknowledged for technical leadership and transparent communication during the Trusted Account project."
+      },
+      {
+        "title": "Bravo Award",
+        "description": "Commended for outstanding ownership in the Indrasize project, driving task prioritization, team onboarding, and proactive participation in key meetings."
+      },
+      {
+        "title": "WOW Award",
+        "description": "Applauded for topic ownership, technical guidance, and impactful results through dedicated team mentorship and collaboration."
+      },
+      {
+        "title": "Stand-Out Performer",
+        "description": "Celebrated for quick learning, efficient delivery, and proactive contributions in CAM and Motion topics."
+      },
+      {
+        "title": "You Are My Mentor",
+        "description": "Honored for consistent guidance and delivering results through mentorship and leadership."
+      },
+      {
+        "title": "#Fit.AncHER",
+        "description": "Recognized for collaborative work on MVPs and quick on-the-job learning of Golang and its implementation."
+      },
+      {
+        "title": "The Expert",
+        "description": "Acknowledged for technical expertise and contributions in the App Launcher task (UMST project)."
+      }
     ]
   },
   {
@@ -59,7 +167,14 @@
     "endDate": "March 2022",
     "responsibilities": [
       "Led cross-functional collaboration with stakeholders, product owners, architects, and developers to drive seamless, high-quality application delivery.",
-      "Contributed to several major product deliveries, ensuring alignment with business goals, on-time execution, and post-release stability."
+      "Contributed to several major product deliveries, ensuring alignment with business goals, on-time execution, and post-release stability.",
+      "Worked closely with new team members during onboarding, providing detailed technical guidance and knowledge sharing to ensure their full and timely contribution.",
+      "Collaborated with the architect to design scalable, modular system architecture that met performance, maintainability, and business requirements.",
+      "Developed responsive and dynamic web applications using React and TypeScript, ensuring optimal performance across devices.",
+      "Designed and implemented key features from the ground up, adhering to SOLID and DRY principles for maintainability and scalability.",
+      "Built and maintained robust RESTful APIs using .NET Core, enabling seamless integration with frontend and external services.",
+      "Automated CI/CD pipelines in Azure DevOps, accelerating deployment cycles by 40% and improving release reliability.",
+      "Actively participated in technical design sessions, code reviews, and team discussions to ensure high-quality, peer-reviewed code."
     ],
     "projects": [
       {
@@ -79,10 +194,79 @@
           "TDD",
           "Black Duck - OSS"
         ]
+      },
+      {
+        "name": "ABB Drive Composer",
+        "description": "It is a start-up and maintenance tool for ABB's common architecture drives. The tool is used to view and set drive parameters, and to monitor and tune process performance.",
+        "technologies": [
+          "WPF",
+          "C#",
+          "Azure DevOps",
+          "Siemens Step7 PLC",
+          "Siemens TIA Portal",
+          "WIX Installer"
+        ]
+      },
+      {
+        "name": "ABB Drive Application Builder",
+        "description": "Combine your application knowledge with the world-class variable speed drives.",
+        "technologies": [
+          "WPF",
+          "C#",
+          "Azure DevOps",
+          "Siemens Step7 PLC",
+          "Siemens TIA Portal",
+          "Flexera Install Shield"
+        ]
       }
     ],
     "achievements": [
-      "Spot Award - Honored at ABB for outstanding delivery and exceeding performance expectations during critical project milestones."
+      {
+        "title": "Spot Award",
+        "description": "Honored at ABB for outstanding delivery and exceeding performance expectations during critical project milestones."
+      },
+      {
+        "title": "On the Fly Award",
+        "description": "Recognized for swift and proactive resolution of high-impact bugs under tight deadlines."
+      }
+    ]
+  },
+  {
+    "company": "Quest Global - GE Oil & Gas",
+    "location": "Bangalore, Karnataka",
+    "position": "Software Engineer",
+    "startDate": "August 2015",
+    "endDate": "March 2018",
+    "responsibilities": [
+      "Collaborated with stakeholders to analyze and understand detailed business and technical requirements.",
+      "Decomposed user stories and modules into manageable development tasks aligned with Agile best practices.",
+      "Created comprehensive conceptual and detailed design documents to ensure clarity and alignment across teams.",
+      "Reviewed and clarified acceptance criteria to ensure complete and accurate implementation of features.",
+      "Implemented modules based on defined tasks, following clean code principles and established design patterns.",
+      "Developed and maintained unit tests to validate functionality and ensure long-term code reliability."
+    ],
+    "projects": [
+      {
+        "name": "System 1* Application Development Kit (SDK)",
+        "description": "Windows Application for creating Digital Twin of Industrial Assets.",
+        "technologies": [
+          "Windows Presentation Foundation",
+          "C#",
+          "PRISM",
+          "Azure DevOps",
+          "TDD"
+        ]
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Team of the Year - 2016",
+        "description": "Celebrated for exemplifying the core value of teamwork and collaborative excellence."
+      },
+      {
+        "title": "Team of the Year - 2015",
+        "description": "Received client recognition for delivering a high-quality, bug-free product within the committed timeline."
+      }
     ]
   }
 ]

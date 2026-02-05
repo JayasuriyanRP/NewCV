@@ -28,7 +28,7 @@ export default function Basics({ url }: { url: string }) {
 
   return (
     <section
-      className="bg-white rounded-lg p-4 mb-6 "
+      className="bg-white rounded-lg p-4"
       aria-labelledby="name"
     >
       <h1 id="name" className="text-4xl font-bold mb-2 text-center">

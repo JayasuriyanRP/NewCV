@@ -27,10 +27,10 @@ export default function Education({ url }: { url: string }) {
   if (!data.length) return <section>No education data found.</section>;
 
   return (
-    <section aria-labelledby="education-title" className="mb-4">
+    <section aria-labelledby="education-title" className="mb-2">
       <h2
         id="education-title"
-        className="text-xl font-semibold border-b pb-1 mb-4"
+        className="text-xl font-semibold border-b pb-1"
       >
         Education
       </h2>

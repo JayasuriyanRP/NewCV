@@ -28,10 +28,10 @@ export default function Experience({ url }: { url: string }) {
   if (error) return <section>Error: {error}</section>;
   if (!data.length) return <section>No experience data found.</section>;
   return (
-    <section aria-labelledby="experience-title" className="mb-4">
+    <section aria-labelledby="experience-title">
       <h2
         id="experience-title"
-        className="text-xl font-semibold border-b pb-1 mb-4"
+        className="text-xl font-semibold border-b pb-1"
       >
         Experience
       </h2>

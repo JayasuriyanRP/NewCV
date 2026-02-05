@@ -27,34 +27,35 @@ export default function Skills({ url }: { url: string }) {
   if (!data) return <section>No skills data found.</section>;
 
   return (
-    <section aria-labelledby="skills-title" className="mb-4">
-      <h2
-        id="skills-title"
-        className="text-xl font-semibold border-b pb-1 mb-4"
-      >
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title" className="text-xl font-semibold border-b pb-1">
         Skills
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {Object.entries(data).map(([category, skills]) => {
-          const skillList = Array.isArray(skills) ? skills : [];
-          return (
-            <div key={category}>
-              <h3 className="text-lg font-bold mb-2">
-                {category?.toUpperCase()}
-              </h3>
-              <ul className="flex flex-wrap gap-2">
-                {skillList.map((skill: any, idx: number) => (
-                  <li
-                    key={idx}
-                    className="bg-gray-100 rounded px-2 py-1 text-sm"
-                  >
-                    {skill.name} {skill.years ? `- ${skill.years} yrs` : ""}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
+      <div className="grid grid-cols-4 gap-4 p-2">
+        {data &&
+          Object.entries(data).map(([category, skills]) => {
+            const skillList = Array.isArray(skills) ? skills : [];
+            return (
+              <div key={category}>
+                <h3 className="text-lg font-bold mb-2">
+                  {category?.toUpperCase()}
+                </h3>
+                <ul className="list-disc ml-6">
+                  {skillList.map((skill: any, idx: number) => (
+                    <li key={idx} className="text-sm">
+                      <span className="font-semibold">{skill.name}</span>
+                      {skill.years ? (
+                        <span className="text-gray-600">
+                          {" "}
+                          &ndash; {skill.years} yrs
+                        </span>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
       </div>
     </section>
   );

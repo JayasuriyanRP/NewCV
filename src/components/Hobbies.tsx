@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 
+type Hobby = {
+  title: string;
+  description: string;
+};
+
 export default function Hobbies({ url }: { url: string }) {
-  const [data, setData] = useState<string[]>([]);
+  const [data, setData] = useState<Hobby[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -27,17 +32,15 @@ export default function Hobbies({ url }: { url: string }) {
   if (!data.length) return <section>No hobbies data found.</section>;
 
   return (
-    <section aria-labelledby="hobbies-title" className="mb-4">
-      <h2
-        id="hobbies-title"
-        className="text-xl font-semibold border-b pb-1 mb-4"
-      >
+    <section aria-labelledby="hobbies-title">
+      <h2 id="hobbies-title" className="text-xl font-semibold border-b p-2">
         Hobbies & Interests
       </h2>
-      <ul className="flex flex-wrap gap-2">
-        {data.map((hobby: string, idx: number) => (
-          <li key={idx} className="bg-gray-100 rounded px-2 py-1 text-sm">
-            {hobby}
+      <ul className="p-2 grid grid-cols-4 gap-4">
+        {data.map((hobby, idx) => (
+          <li key={idx} className="p-1 shadow-sm">
+            <span className="font-bold text-sm">{hobby.title}</span>
+            <p className="text-xs">{hobby.description}</p>
           </li>
         ))}
       </ul>

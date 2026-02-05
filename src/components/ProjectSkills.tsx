@@ -5,7 +5,7 @@ export default function ProjectSkills({ skills }: { skills: string[] }) {
       {skills.map((skill, idx) => (
         <span
           key={idx}
-          className="bg-[#007acc] rounded-full px-4 py-1.5 text-sm font-medium text-white border border-radius-50"
+          className="bg-[#007acc] rounded-full px-3 py-1 text-xs font-medium text-white border border-radius-50"
         >
           {skill}
         </span>
