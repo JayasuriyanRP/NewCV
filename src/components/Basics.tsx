@@ -27,11 +27,49 @@ export default function Basics({ url }: { url: string }) {
   if (!data) return <section>No basics data found.</section>;
 
   return (
-    <section aria-labelledby="name">
-      <h1 id="name">{data.name}</h1>
-      <p>{data.location}</p>
-      <a href={`mailto:${data.email}`}>{data.email}</a>
-      {/* Add more fields as needed */}
+    <section
+      className="bg-white rounded-lg shadow p-6 mb-8"
+      aria-labelledby="name"
+    >
+      <h1 id="name" className="text-3xl font-bold mb-2">
+        {data.name}
+      </h1>
+      <p className="text-base text-gray-600 mb-1">{data.location}</p>
+      <div className="flex flex-wrap gap-4 mb-2">
+        <a href={`mailto:${data.email}`} className="text-blue-600 underline">
+          {data.email}
+        </a>
+        <a
+          href={data.github}
+          className="text-blue-600 underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href={data.linkedin}
+          className="text-blue-600 underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <span className="text-gray-600">{data.phone}</span>
+      </div>
+      <p className="mt-2 text-base text-gray-800">{data.summary}</p>
+      {data.languages && (
+        <div className="mt-2">
+          <span className="font-semibold">Languages:</span>
+          <ul className="inline-flex gap-2 ml-2">
+            {data.languages.map((lang: any, idx: number) => (
+              <li key={idx} className="bg-gray-100 rounded px-2 py-1 text-sm">
+                {lang.name} ({lang.proficiency})
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </section>
   );
 }

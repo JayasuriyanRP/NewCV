@@ -27,11 +27,18 @@ export default function Hobbies({ url }: { url: string }) {
   if (!data.length) return <section>No hobbies data found.</section>;
 
   return (
-    <section aria-labelledby="hobbies-title">
-      <h2 id="hobbies-title">Hobbies & Interests</h2>
-      <ul>
+    <section aria-labelledby="hobbies-title" className="mb-8">
+      <h2
+        id="hobbies-title"
+        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+      >
+        Hobbies & Interests
+      </h2>
+      <ul className="flex flex-wrap gap-2">
         {data.map((hobby: string, idx: number) => (
-          <li key={idx}>{hobby}</li>
+          <li key={idx} className="bg-gray-100 rounded px-2 py-1 text-sm">
+            {hobby}
+          </li>
         ))}
       </ul>
     </section>

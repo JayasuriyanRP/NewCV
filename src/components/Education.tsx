@@ -27,15 +27,24 @@ export default function Education({ url }: { url: string }) {
   if (!data.length) return <section>No education data found.</section>;
 
   return (
-    <section aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
+    <section aria-labelledby="education-title" className="mb-8">
+      <h2
+        id="education-title"
+        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+      >
+        Education
+      </h2>
       {data.map((edu: any, idx: number) => (
-        <div key={idx}>
-          <h3>{edu.institution}</h3>
-          <p>
-            {edu.degree} ({edu.startDate} - {edu.endDate})
-          </p>
-          <p>
+        <div key={idx} className="bg-white rounded-lg shadow p-4 mb-6">
+          <h3 className="text-lg font-bold">{edu.institution}</h3>
+          <p className="text-base font-semibold mt-1">{edu.degree}</p>
+          <div className="flex justify-between text-sm text-gray-500 mb-2">
+            <span>{edu.board}</span>
+            <span>
+              {edu.startDate} - {edu.endDate}
+            </span>
+          </div>
+          <p className="text-sm text-gray-500">
             {edu.location} | {edu.score}
           </p>
         </div>

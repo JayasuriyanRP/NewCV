@@ -5,8 +5,10 @@ const RESUME_ROOT_URL = "/local.json";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-      <Resume rootUrl={RESUME_ROOT_URL} />
+    <div className="min-h-screen bg-resume-bg text-resume-text font-sans flex flex-col items-center py-8">
+      <div className="w-full max-w-3xl">
+        <Resume rootUrl={RESUME_ROOT_URL} />
+      </div>
     </div>
   );
 }

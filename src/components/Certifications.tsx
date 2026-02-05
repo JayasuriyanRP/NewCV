@@ -27,12 +27,22 @@ export default function Certifications({ url }: { url: string }) {
   if (!data.length) return <section>No certifications data found.</section>;
 
   return (
-    <section aria-labelledby="certifications-title">
-      <h2 id="certifications-title">Certifications</h2>
-      <ul>
+    <section aria-labelledby="certifications-title" className="mb-8">
+      <h2
+        id="certifications-title"
+        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+      >
+        Certifications
+      </h2>
+      <ul className="list-disc ml-6">
         {data.map((cert: any, idx: number) => (
           <li key={idx}>
-            <a href={cert.url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
               {cert.title}
             </a>
           </li>
