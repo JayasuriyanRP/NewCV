@@ -1,10 +1,10 @@
-## React Resume App Setup Instructions
+## React Resume App Setup & Features
 
-This project uses React 19.2 and TypeScript to render a resume from JSON data hosted on GitHub. Follow these steps to set up and run the app:
+This project is a modern React 19.2 + TypeScript resume app that renders your resume from modular JSON files (experience, skills, education, certifications, hobbies, basics) and supports interactive UI features. It is styled with Tailwind CSS and designed for accessibility and maintainability.
 
 ### 1. Install Dependencies
 
-Navigate to the `src/` folder and run:
+Navigate to the project root and run:
 
 ```sh
 npm install
@@ -16,16 +16,23 @@ npm install
 npm run dev
 ```
 
-### 3. How It Works
+### 3. Features & How It Works
 
-- The app fetches your resume JSON from a GitHub URL using the fetch API and React 19.2's `use()` hook for async data loading.
-- The Resume component renders sections like education, experience, and skills from the JSON.
-- Accessibility and semantic HTML are used throughout.
+- Modular JSON data: All resume sections (experience, skills, education, certifications, hobbies, basics) are loaded from local or remote JSON files.
+- Interactive PrintActionsBar: Floating menu for WhatsApp, cover letter, message template, print, and PDF compress (hidden on print).
+- Responsive, accessible layout: Semantic HTML, ARIA attributes, and keyboard navigation.
+- Tailwind CSS for styling: Modern, clean look with utility classes. Dark mode has been removed for simplicity.
+- Skills: Rendered as bullet points, 4-column layout, skill name bold, years separated by dash.
+- Achievements: Consistent object model (title, description) for all companies.
+- Certifications: Interactive icons and hover effects.
+- Hobbies: Short, concise entries with title and description.
+- Print-optimized: PrintActionsBar is hidden when printing.
+- Error handling: Components show loading and error states for data fetches.
 
 ### 4. Customizing Resume Data
 
-- Update the GitHub JSON URL in the Resume component to point to your own resume data.
-- Edit the Resume component to change layout or styling as needed.
+- Update the JSON files in `public/` or point to your own hosted JSON URLs.
+- Edit components in `src/components/` to change layout, add features, or adjust styling.
 
 ### 5. Code Quality
 
