@@ -27,10 +27,10 @@ export default function Skills({ url }: { url: string }) {
   if (!data) return <section>No skills data found.</section>;
 
   return (
-    <section aria-labelledby="skills-title" className="mb-8">
+    <section aria-labelledby="skills-title" className="mb-4">
       <h2
         id="skills-title"
-        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+        className="text-xl font-semibold border-b pb-1 mb-4"
       >
         Skills
       </h2>
@@ -39,7 +39,9 @@ export default function Skills({ url }: { url: string }) {
           const skillList = Array.isArray(skills) ? skills : [];
           return (
             <div key={category}>
-              <h3 className="text-lg font-bold mb-2">{category}</h3>
+              <h3 className="text-lg font-bold mb-2">
+                {category?.toUpperCase()}
+              </h3>
               <ul className="flex flex-wrap gap-2">
                 {skillList.map((skill: any, idx: number) => (
                   <li

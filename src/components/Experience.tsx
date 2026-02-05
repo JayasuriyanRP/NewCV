@@ -28,15 +28,15 @@ export default function Experience({ url }: { url: string }) {
   if (error) return <section>Error: {error}</section>;
   if (!data.length) return <section>No experience data found.</section>;
   return (
-    <section aria-labelledby="experience-title" className="mb-8">
+    <section aria-labelledby="experience-title" className="mb-4">
       <h2
         id="experience-title"
-        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+        className="text-xl font-semibold border-b pb-1 mb-4"
       >
         Experience
       </h2>
       {data.map((job: any, idx: number) => (
-        <div key={idx} className="bg-white rounded-lg p-4 mb-6">
+        <div key={idx} className="bg-white rounded-lg p-4">
           <div className="flex justify-between items-center">
             <span className="text-lg font-bold">{job.company}</span>
             <span className="text-sm text-gray-500">

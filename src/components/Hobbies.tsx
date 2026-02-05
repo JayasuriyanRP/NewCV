@@ -27,10 +27,10 @@ export default function Hobbies({ url }: { url: string }) {
   if (!data.length) return <section>No hobbies data found.</section>;
 
   return (
-    <section aria-labelledby="hobbies-title" className="mb-8">
+    <section aria-labelledby="hobbies-title" className="mb-4">
       <h2
         id="hobbies-title"
-        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+        className="text-xl font-semibold border-b pb-1 mb-4"
       >
         Hobbies & Interests
       </h2>

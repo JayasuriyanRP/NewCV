@@ -27,15 +27,15 @@ export default function Education({ url }: { url: string }) {
   if (!data.length) return <section>No education data found.</section>;
 
   return (
-    <section aria-labelledby="education-title" className="mb-8">
+    <section aria-labelledby="education-title" className="mb-4">
       <h2
         id="education-title"
-        className="text-xl font-semibold border-b pb-1 mb-4 mt-8"
+        className="text-xl font-semibold border-b pb-1 mb-4"
       >
         Education
       </h2>
       {data.map((edu: any, idx: number) => (
-        <div key={idx} className="bg-white rounded-lg p-4 mb-6">
+        <div key={idx} className="bg-white rounded-lg p-2">
           <h3 className="text-lg font-bold">{edu.institution}</h3>
           <p className="text-base font-semibold mt-1">{edu.degree}</p>
           <div className="flex justify-between text-sm text-gray-500 mb-2">
