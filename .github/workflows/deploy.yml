@@ -3,8 +3,7 @@ name: Build and Deploy Resume App
 on:
   push:
     branches:
-      - main
-      - feature/React-Resume
+      - master
 
 jobs:
   build-and-deploy:
