@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Projects from "./Projects";
+import Achievements from "./Achievements";
 
 export default function Experience({ url }: { url: string }) {
   const [data, setData] = useState<any[]>([]);
@@ -34,7 +36,7 @@ export default function Experience({ url }: { url: string }) {
         Experience
       </h2>
       {data.map((job: any, idx: number) => (
-        <div key={idx} className="bg-white rounded-lg shadow p-4 mb-6">
+        <div key={idx} className="bg-white rounded-lg p-4 mb-6">
           <div className="flex justify-between items-center">
             <span className="text-lg font-bold">{job.company}</span>
             <span className="text-sm text-gray-500">
@@ -49,30 +51,10 @@ export default function Experience({ url }: { url: string }) {
             ))}
           </ul>
           {job.projects && job.projects.length > 0 && (
-            <div className="mt-2">
-              <span className="font-semibold">Projects:</span>
-              <ul className="list-disc ml-6">
-                {job.projects.map((proj: any, i: number) => (
-                  <li key={i}>
-                    <span className="font-semibold">{proj.name}:</span>{" "}
-                    {proj.description}
-                    <span className="ml-2 text-xs text-gray-500">
-                      [{proj.technologies.join(", ")}]
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Projects url={null} data={job.projects} />
           )}
           {job.achievements && job.achievements.length > 0 && (
-            <div className="mt-2">
-              <span className="font-semibold">Achievements:</span>
-              <ul className="list-disc ml-6">
-                {job.achievements.map((ach: string, i: number) => (
-                  <li key={i}>{ach}</li>
-                ))}
-              </ul>
-            </div>
+            <Achievements url={null} data={job.achievements} />
           )}
         </div>
       ))}

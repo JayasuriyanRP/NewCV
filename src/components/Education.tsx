@@ -35,7 +35,7 @@ export default function Education({ url }: { url: string }) {
         Education
       </h2>
       {data.map((edu: any, idx: number) => (
-        <div key={idx} className="bg-white rounded-lg shadow p-4 mb-6">
+        <div key={idx} className="bg-white rounded-lg p-4 mb-6">
           <h3 className="text-lg font-bold">{edu.institution}</h3>
           <p className="text-base font-semibold mt-1">{edu.degree}</p>
           <div className="flex justify-between text-sm text-gray-500 mb-2">
