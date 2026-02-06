@@ -38,7 +38,7 @@ export default function Projects({
   return (
     <section
       aria-labelledby="projects-title"
-      className="bg-[#eef6fc] border-l-4 border-[#007acc] my-3 py-3 px-3 rounded-md"
+      className="bg-[#eef6fc] border-l-4 border-[#007acc] my-3 py-3 px-3 rounded-md text-sm print:text-xs shadow-sm shadow-[#007acc]"
     >
       <span className="font-semibold">Projects:</span>
       <ul className="list-disc ml-6">

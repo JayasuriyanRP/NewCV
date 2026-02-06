@@ -28,24 +28,42 @@ export default function Experience({ url }: { url: string }) {
   if (error) return <section>Error: {error}</section>;
   if (!data.length) return <section>No experience data found.</section>;
   return (
-    <section aria-labelledby="experience-title">
+    <section aria-labelledby="experience-title" className="mb-6">
       <h2
         id="experience-title"
-        className="text-xl font-semibold border-b pb-1"
+        className="text-xl print:text-lg font-semibold border-b pb-1"
       >
         Experience
       </h2>
       {data.map((job: any, idx: number) => (
-        <div key={idx} className="bg-white rounded-lg p-4">
+        <div
+          key={idx}
+          className="bg-white rounded-lg p-2 shadow-xl mb-4 print:text-sm"
+        >
           <div className="flex justify-between items-center">
-            <span className="text-lg font-bold">{job.company}</span>
-            <span className="text-sm text-gray-500">
+            <div className="flex items-center gap-2 print:text-sm">
+              {job.logo && (
+                <img
+                  src={job.logo}
+                  alt={job.company + " logo"}
+                  className="w-8 h-8"
+                />
+              )}
+              <span className="text-lg print:text-base font-bold">
+                {job.company}
+              </span>
+            </div>
+            <span className="text-sm print:text-xs text-gray-500">
               {job.startDate} - {job.endDate}
             </span>
           </div>
-          <div className="text-base font-semibold mt-1">{job.title}</div>
-          <div className="text-sm text-gray-500 mb-2">{job.location}</div>
-          <ul className="list-disc ml-6 mt-2 text-base">
+          <div className="text-base print:text-sm font-semibold mt-1">
+            {job.title}
+          </div>
+          <div className="text-sm print:text-xs text-gray-500 mb-2">
+            {job.location}
+          </div>
+          <ul className="list-disc ml-6 mt-2 text-base print:text-sm">
             {job.responsibilities.map((r: string, i: number) => (
               <li key={i}>{r}</li>
             ))}

@@ -2,7 +2,7 @@ import PrintActionsBar from "./components/PrintActionsBar";
 import Resume from "./components/Resume";
 
 // Replace with your actual resume.json URL
-const RESUME_ROOT_URL = "/local.json";
+const RESUME_ROOT_URL = "local.json";
 
 export default function App() {
   return (

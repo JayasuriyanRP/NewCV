@@ -27,28 +27,34 @@ export default function Education({ url }: { url: string }) {
   if (!data.length) return <section>No education data found.</section>;
 
   return (
-    <section aria-labelledby="education-title" className="mb-2">
-      <h2
-        id="education-title"
-        className="text-xl font-semibold border-b pb-1"
-      >
+    <section aria-labelledby="education-title" className="mb-6">
+      <h2 id="education-title" className="text-xl font-semibold border-b pb-1">
         Education
       </h2>
-      {data.map((edu: any, idx: number) => (
-        <div key={idx} className="bg-white rounded-lg p-2">
-          <h3 className="text-lg font-bold">{edu.institution}</h3>
-          <p className="text-base font-semibold mt-1">{edu.degree}</p>
-          <div className="flex justify-between text-sm text-gray-500 mb-2">
-            <span>{edu.board}</span>
-            <span>
-              {edu.startDate} - {edu.endDate}
-            </span>
+      <div className="grid grid-cols-3 gap-4 mt-4">
+        {data.map((edu: any, idx: number) => (
+          <div
+            key={idx}
+            className="bg-white rounded-xl shadow-lg p-4 flex flex-col"
+          >
+            <h3 className="text-base print:text-sm font-bold mb-1">
+              {edu.institution}
+            </h3>
+            <p className="text-sm print:text-sm font-semibold mb-1">
+              {edu.degree}
+            </p>
+            <div className="flex justify-between text-sm print:text-xs text-gray-500 mb-2">
+              <span>{edu.board}</span>
+              <span className="font-bold text-right text-xs ">
+                {edu.startDate} - {edu.endDate}
+              </span>
+            </div>
+            <p className="text-sm print:text-xs text-gray-500">
+              {edu.location} | <span className="font-bold">{edu.score}</span>
+            </p>
           </div>
-          <p className="text-sm text-gray-500">
-            {edu.location} | {edu.score}
-          </p>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 }

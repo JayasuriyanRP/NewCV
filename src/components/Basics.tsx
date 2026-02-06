@@ -27,17 +27,25 @@ export default function Basics({ url }: { url: string }) {
   if (!data) return <section>No basics data found.</section>;
 
   return (
-    <section
-      className="bg-white rounded-lg p-4"
-      aria-labelledby="name"
-    >
-      <h1 id="name" className="text-4xl font-bold mb-2 text-center">
-        {data.name}
-      </h1>
-      <p className="text-base text-gray-600 mb-2 text-center">
-        {data.location}
-      </p>
-      <div className="flex flex-wrap gap-4 mb-2 justify-between items-center">
+    <section className="bg-white rounded-lg p-4" aria-labelledby="name">
+      <div className="flex items-center mb-4 gap-6">
+        {data.profileImage && (
+          <img
+            src={data.profileImage}
+            alt={data.name + " profile"}
+            className="w-16 h-24 rounded-full shadow object-cover"
+          />
+        )}
+        <div className="flex flex-col justify-center">
+          <h1 id="name" className="text-4xl font-bold mb-2 text-left print:text-2xl">
+            {data.name}
+          </h1>
+          <p className="text-base text-gray-600 mb-2 text-left print:text-sm">
+            {data.location}
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 mb-2 justify-between items-center print:text-sm">
         <a
           href={`mailto:${data.email}`}
           className="flex items-center gap-1 text-blue-600 underline"
@@ -91,30 +99,22 @@ export default function Basics({ url }: { url: string }) {
           LinkedIn
         </a>
         <span className="flex items-center gap-1 text-gray-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-green-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          📞
+          <a
+            className="flex items-center gap-1 text-blue-600 underline"
+            href={`tel:${data.phone}`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2zm12-12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 12a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-            />
-          </svg>
-          {data.phone}
+            {data.phone}
+          </a>
         </span>
       </div>
-      <p className="mt-2 text-base text-gray-800">{data.summary}</p>
+      <p className="mt-2 text-base text-gray-800 print:text-sm">{data.summary}</p>
       {data.languages && (
-        <div className="mt-2">
+        <div className="mt-2 print:text-xs">
           <span className="font-semibold">Languages:</span>
           <ul className="inline-flex gap-2 ml-2">
             {data.languages.map((lang: any, idx: number) => (
-              <li key={idx} className="bg-gray-100 rounded px-2 py-1 text-sm">
+              <li key={idx} className="bg-gray-100 rounded px-2 py-1 text-sm print:text-xs">
                 {lang.name} ({lang.proficiency})
               </li>
             ))}

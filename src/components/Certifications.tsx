@@ -27,7 +27,7 @@ export default function Certifications({ url }: { url: string }) {
   if (!data.length) return <section>No certifications data found.</section>;
 
   return (
-    <section aria-labelledby="certifications-title">
+    <section aria-labelledby="certifications-title" className="print:text-sm mb-2">
       <h2
         id="certifications-title"
         className="text-xl font-semibold border-b p-2"

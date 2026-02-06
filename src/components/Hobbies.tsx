@@ -32,14 +32,14 @@ export default function Hobbies({ url }: { url: string }) {
   if (!data.length) return <section>No hobbies data found.</section>;
 
   return (
-    <section aria-labelledby="hobbies-title">
+    <section aria-labelledby="hobbies-title" className="print:text-sm">
       <h2 id="hobbies-title" className="text-xl font-semibold border-b p-2">
         Hobbies & Interests
       </h2>
       <ul className="p-2 grid grid-cols-4 gap-4">
         {data.map((hobby, idx) => (
-          <li key={idx} className="p-1 shadow-sm">
-            <span className="font-bold text-sm">{hobby.title}</span>
+          <li key={idx} className="p-1 shadow-lg">
+            <span className="font-bold text-sm print:text-xs">{hobby.title}</span>
             <p className="text-xs">{hobby.description}</p>
           </li>
         ))}

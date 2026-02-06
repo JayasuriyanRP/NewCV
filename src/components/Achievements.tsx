@@ -40,7 +40,7 @@ export default function Achievements({
   return (
     <section
       aria-labelledby="achievements-title"
-      className="bg-[#f2f8e9] border-l-5 border-[#78ba15] p-4 rounded-lg mt-2.5 text-[0.95em]"
+      className="bg-[#f2f8e9] border-l-5 border-[#78ba15] p-4 rounded-lg mt-2.5 text-sm print:text-xs shadow-sm shadow-[#78ba15]"
     >
       <span className="font-semibold">Achievements:</span>
       <ul className="list-disc ml-6">

@@ -1,6 +1,7 @@
 [
   {
     "company": "Krones Digital Solutions India (KDSI)",
+    "logo": "https://www.krones.com/media/images_layout/favicon.ico",
     "location": "Bangalore, Karnataka",
     "title": "HMI Developer",
     "startDate": "June 2025",
@@ -67,6 +68,7 @@
   },
   {
     "company": "Bosch Global Software Technologies (BGSW)",
+    "logo": "https://www.bosch-softwaretechnologies.com/media/tech/media_root_folder/favicon-png.png",
     "location": "Coimbatore, TamilNadu",
     "title": "Technical Specialist",
     "startDate": "March 2022",
@@ -161,6 +163,7 @@
   },
   {
     "company": "ASEA Brown Boveri (ABB)",
+    "logo": "https://www.abb.com/etc.clientlibs/aot/clientlibs/clientlib-resources/resources/icon-180x180.png",
     "location": "Bangalore, Karnataka",
     "title": "Senior Software Engineer",
     "startDate": "April 2018",
@@ -233,6 +236,7 @@
   },
   {
     "company": "Quest Global - GE Oil & Gas",
+    "logo": "https://www.ge.com/news/themes/custom/genewsroom/assets/icons/favicon-32x32.png?v=zX70X9A8R5",
     "location": "Bangalore, Karnataka",
     "position": "Software Engineer",
     "startDate": "August 2015",
