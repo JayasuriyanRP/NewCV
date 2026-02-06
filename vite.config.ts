@@ -8,5 +8,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss(), svgr()],
     server: {},
+    base: "/NewCV/",
   };
 });
