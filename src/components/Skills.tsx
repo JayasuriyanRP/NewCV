@@ -31,7 +31,7 @@ export default function Skills({ url }: { url: string }) {
       <h2 id="skills-title" className="text-xl font-semibold border-b pb-1">
         Skills
       </h2>
-      <div className="grid grid-cols-4 gap-4 p-2">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-2">
         {data &&
           Object.entries(data).map(([category, skills]) => {
             const skillList = Array.isArray(skills) ? skills : [];

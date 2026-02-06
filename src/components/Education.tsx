@@ -31,7 +31,7 @@ export default function Education({ url }: { url: string }) {
       <h2 id="education-title" className="text-xl font-semibold border-b pb-1">
         Education
       </h2>
-      <div className="grid grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {data.map((edu: any, idx: number) => (
           <div
             key={idx}

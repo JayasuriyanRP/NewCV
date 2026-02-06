@@ -324,3 +324,4 @@ apiMarkdown/
 *.db-shm
 *.db-wal
 dist/
+.vite/
