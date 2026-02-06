@@ -1,0 +1,8 @@
+{
+  "basics": "basics.json",
+  "experience": "experience.json",
+  "education": "education.json",
+  "skills": "skills.json",
+  "certifications": "certifications.json",
+  "hobbies": "hobbies.json"
+}

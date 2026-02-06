@@ -1,0 +1,44 @@
+{
+  "Backend": [
+    { "name": "C#", "years": 9 },
+    { "name": "Golang", "years": 3 },
+    { "name": ".NET Core", "years": 6 },
+    { "name": ".NET Framework", "years": 5 }
+  ],
+  "Frontend": [
+    { "name": "React", "years": 6 },
+    { "name": "Angular", "years": 1 },
+    { "name": "Stencil JS", "years": 1 },
+    { "name": "SASS", "years": 3 },
+    { "name": "HTML/CSS", "years": 8 }
+  ],
+  "Database": [
+    { "name": "Azure Cosmos DB", "years": 3 },
+    { "name": "SQLite", "years": 2 },
+    { "name": "Entity Framework", "years": 6 }
+  ],
+  "Cloud": [
+    { "name": "Azure", "years": 6 },
+    { "name": "IaC with Pulumi", "years": 3 }
+  ],
+  "DevOps": [
+    { "name": "Azure DevOps", "years": 8 },
+    { "name": "Jenkins", "years": 3 },
+    { "name": "PowerShell", "years": 6 },
+    { "name": "Docker", "years": 6 },
+    { "name": "Git", "years": 9 },
+    { "name": "WSL", "years": 3 }
+  ],
+  "Architecture": [
+    { "name": "Microservices", "years": 6 },
+    { "name": "API Versioning", "years": 3 },
+    { "name": "TDD", "years": 6 }
+  ],
+  "Tools": [
+    { "name": "VS Code", "years": 9 },
+    { "name": "Visual Studio", "years": 9 },
+    { "name": "Postman", "years": 7 },
+    { "name": "JMeter", "years": 3 },
+    { "name": "Draw.io", "years": 6 }
+  ]
+}

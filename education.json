@@ -1,0 +1,29 @@
+[
+  {
+    "institution": "Knowledge Institute of Technology",
+    "degree": "BE- ECE",
+    "board": "Anna University Chennai",
+    "startDate": "June 2011",
+    "endDate": "March 2015",
+    "location": "Tamil Nadu",
+    "score": "8.1 CGPA"
+  },
+  {
+    "institution": "Senthil Matric. Hr. Sec. School",
+    "degree": "12th Computer Science",
+    "board": "TamilNadu State Board",
+    "startDate": "June 2010",
+    "endDate": "March 2011",
+    "location": "Tamil Nadu",
+    "score": "78%"
+  },
+  {
+    "institution": "Senthil Matric. Hr. Sec. School",
+    "degree": "10th",
+    "board": "TamilNadu State Board",
+    "startDate": "June 2009",
+    "endDate": "March 2010",
+    "location": "Tamil Nadu",
+    "score": "74%"
+  }
+]
